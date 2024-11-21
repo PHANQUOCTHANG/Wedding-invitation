@@ -82,11 +82,12 @@
 /* section-4 */
 
 body {
+  font-family: var(--font-two--);
   background-color: #ccc;
 }
 .section-four {
   font-family: var(--font-two--);
-  background-color: var(--color-three);
+  /* background-color: var(--color-three);  */
   margin: 0;
   padding: 0;
   display: flex;
@@ -97,8 +98,8 @@ body {
 .section-four .container .inner-wrap {
   padding: 48px 78px;
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .inner-calendar h3.inner-title {
@@ -251,3 +252,128 @@ div.selected {
 
 /* end section-6 */
 
+/* Co Dau & Chu Re */
+.section-bride-groom {
+  color: #474747;
+}
+.section-bride-groom .inner-wrap {
+  background-color: #f9f9f9;
+  padding: 48px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-bride-groom .inner-wrap h2.inner-title {
+  font-family: var(--font-one--);
+  font-size: 44px;
+  font-weight: 500;
+  margin: 0;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-image {
+  margin-top: 30px;
+  width: 350px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-parent {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5em;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-parent span {
+  text-align: center;
+  font-size: 16px;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-content {
+  padding: 0 20px;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-content p {
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font: inherit;
+  vertical-align: baseline;
+  margin-block-start: 0.8em;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-button {
+  padding: 2px;
+  width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-contact {
+  font-family: var(--font-one--);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-contact ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
+}
+.section-bride-groom .inner-wrap .inner-box .inner-contact ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  margin-left: 12px;
+}
+.section-bride-groom .inner-wrap .inner-box:nth-child(2) {
+  margin-top: 50px;
+}
+/* EndCo Dau & Chu Re */
+
+/* Thank You  */
+.section-thank-you .inner-wrap {
+  padding: 48px 0;
+  font-family: var(--font-two--);
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-thank-you .inner-wrap h3 {
+  color: #474747;
+  font-size: 44px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.section-thank-you .inner-wrap h5 {
+  color: #474747;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 8px;
+}
+/* End Thank You  */
