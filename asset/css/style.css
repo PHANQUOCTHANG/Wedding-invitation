@@ -1,0 +1,37 @@
+.album .album-title, .album .album-desc {
+    text-align: center;
+}
+.album h2 {
+    font-family: var(--font-one--);
+    font-size: 48px;
+    font-weight: 500;
+    margin: 24px 0;
+}
+.album p {
+    font-family: var(--font-two--);
+}
+.album .album-img {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+.album .album-img .col {
+    width: calc(50% - 4px);
+}
+.album .album-img .img img {
+    object-fit: cover;
+    width: 100%;
+}
+.album .see-all-album {
+    margin: 32px 0;
+    text-align: center;
+}
+.album .see-all-album p a {
+    font-family: var(--font-two--);
+    padding: 12px 24px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background-color: #636363;
+    border-radius: 24px;
+}
