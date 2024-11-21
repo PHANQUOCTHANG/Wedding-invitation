@@ -1,3 +1,36 @@
+/* Video cưới */
+.section-2-main {
+    background-color: #F8F8F8;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.section-2-main p {
+    margin:0;
+}
+
+.section-2-main p:first-child {
+    font-size:60px;
+    font-family: var(--font-one--);
+    color:#474747 ;
+    font-weight: 500;
+}
+
+.section-2-main #text {
+    font-size:20px;
+    margin-top: 20px ;
+    font-weight: 200;
+    font-family: var(--font-two--);
+}
+
+.section-2-main .iframe iframe {
+    margin-top: 40px;
+    margin-bottom: 50px ;
+    border-radius: 20px ;
+}
+/* End video cưới */
+
+/* Album hình cưới */
 .album .album-title, .album .album-desc {
     text-align: center;
 }
@@ -9,6 +42,7 @@
 }
 .album p {
     font-family: var(--font-two--);
+    font-size: 20px;
 }
 .album .album-img {
     display: flex;
@@ -35,3 +69,5 @@
     background-color: #636363;
     border-radius: 24px;
 }
+/* End album hình cưới */
+
