@@ -1,3 +1,92 @@
+/* section 1 start  */
+.section-1 .wrap {
+  color: var(--color-one);
+  padding: 16px;
+}
+.section-1 a {
+  text-decoration: none;
+}
+.section-1 .wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.section-1 .wrap .inner-title {
+  display: flex;
+  padding: 16px 8px;
+  justify-content: right;
+  gap: 10px;
+  align-items: center;
+  position: relative;
+}
+.section-1 .wrap .inner-title > p {
+  color: var(--color-three);
+  font-size: 17.6px;
+  font-weight: 500;
+}
+.section-1 .wrap .inner-title > p:first-child {
+  position: absolute;
+  left: calc(100% - 260px);
+  bottom: 20px;
+}
+.section-1 .wrap .inner-title .time-wedding {
+  font-size: 70px;
+  font-weight: 500;
+}
+.section-1 .wrap .inner-title .time-wedding > p:first-child {
+  border-bottom: 1px solid var(--color-one);
+}
+.section-1 .wrap .inner-img {
+  padding: 24px 0 80px;
+  position: relative;
+}
+
+.section-1 .wrap .inner-img .main-img {
+  overflow: hidden;
+}
+.section-1 .wrap .inner-img .wedding-title {
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+}
+.section-1 .wrap .inner-img .wedding-desc {
+  position: relative;
+  text-align: left;
+  font-size: 22px;
+  left: 50px;
+  top: 50px;
+  color: var(--color-three);
+  font-weight: 500;
+}
+.section-1 .wrap .wedding-nav {
+  margin-top: 70px;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.section-1 .wrap .wedding-nav .wedding-box {
+  background-color: var(--color-btn);
+  width: calc(33% - 5px);
+  padding: 10px 12px;
+  margin: 0 0 4px;
+  border-radius: 5px;
+  transition: all 0.4s ease;
+}
+.section-1 .wrap .wedding-nav .wedding-box a {
+  display: block;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+}
+.section-1 .wrap .wedding-nav .wedding-box a i {
+  font-size: 17px;
+}
+.section-1 .wrap .wedding-nav .wedding-box:hover {
+  background-color: var(--color-two);
+}
+/* section 1 end  */
+
 /* *{
     padding: 0;
     margin: 0;
@@ -22,10 +111,10 @@
 }
 
 .section-2-main #text {
-    font-size:20px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin-top: 20px;
 }
 
 .section-2-main .iframe iframe {
@@ -35,7 +124,6 @@
 }
 
 /* End video cưới */
-
 
 /* Album hình cưới */
 .album .album-title,
@@ -359,52 +447,170 @@ div.selected {
 
 /* end section-4 */
 
- /* section-6 */
-
- .section-6-main {
-    background-color: #F8F8F8;
-    text-align: center  ;
-    padding-top: 60px;
-    margin-top: 20px ;
+/* section 5 start  */
+.section-5 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.section-5 .wrap h2 {
+  font-family: var(--font-one--);
+  font-size: 44.8px;
+  color: #474747;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.section-5 .wrap > h3 {
+  font-size: 17.6px;
+  margin-bottom: 24px;
+  color: #212529;
+  font-weight: 500;
+  text-align: center;
+}
+.section-5 .wrap {
+  padding: 48px 20px;
+  background-color: white;
+}
+.section-5 .wrap .time-line-card {
+  padding: 20px 20px 30px;
+  position: relative;
+}
+.section-5 .wrap .time-line-card .infor {
+  padding: 10px;
+  padding-top: 30px;
+}
+.section-5 .wrap .time-line-card .infor .title {
+  font-weight: 500;
+  font-size: 22.4px;
+  color: #474747;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  position: relative;
+  font-family: var(--font-two--);
+}
+.section-5 .wrap .time-line-card .infor .date {
+  font-weight: 300;
+}
+.section-5 .wrap .time-line-card .infor .title::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 999px;
+  border: 3px solid orangered;
+  border-color: #474747;
+}
+.section-5 .wrap .inner-wrap .time-line-card:nth-child(even) > .infor {
+  text-align: right;
+}
+.section-5
+  .inner-wrap
+  .time-line-card:nth-child(odd)
+  > .infor
+  > .title::before {
+  left: -35px;
+}
+.section-5
+  .inner-wrap
+  .time-line-card:nth-child(even)
+  > .infor
+  > .title::before {
+  right: -35px;
+}
+.section-5 .wrap .time-line-card .infor p {
+  margin-bottom: 16px;
+  line-height: 25px;
+  color: #212529;
+  font-weight: 400;
+}
+.section-5 .wrap .time-line-card:first-child .infor {
+  padding-top: 0px;
+}
+.section-5 .wrap .time-line-card .infor .img-holder {
+  border-radius: 25px;
+  overflow: hidden;
+}
+.section-5 .inner-wrap .time-line-card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid orangered;
+  border-color: #474747;
 }
 
+.section-5 .inner-wrap .time-line-card:nth-child(odd)::before {
+  left: 0px;
+  top: -2px;
+  bottom: 0px;
+  border-width: 3px 0 3px 3px;
+  border-radius: 50px 0 0 50px;
+}
+.section-5 .inner-wrap .time-line-card:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0px;
+}
+.section-5 .inner-wrap .time-line-card:nth-child(even)::before {
+  right: 0px;
+  top: -2px;
+  bottom: 0px;
+  border-width: 3px 3px 3px 0px;
+  border-radius: 0px 50px 50px 0px;
+}
+.section-5 .inner-wrap .time-line-card:last-child::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0px;
+}
+.section-5 .timeline-card:nth-child(even) {
+  padding: 30px 20px 30px 20px;
+}
+/* section 5 end  */
+/* section-6 */
+
+.section-6-main {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding-top: 60px;
+  margin-top: 20px;
+}
 
 .section-6-main h2 {
-    font-size:50px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin: 0;
-    margin-bottom: 60px ;
+  font-size: 50px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 .section-6-main p {
-    font-size:18px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin-top: 0px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .section-6-main img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .section-6-main .img-6 {
-    padding: 0px 20px;
-    margin-top: 50px;
+  padding: 0px 20px;
+  margin-top: 50px;
 }
 
 .section-6-main .text-6 {
-    font-family: var(--font-one--);
-    color: #949494;
-    font-size: 25px ;
+  font-family: var(--font-one--);
+  color: #949494;
+  font-size: 25px;
 }
 
 .section-6-main .text-6 strong {
-    color: #222;
-    margin-left: 10px;
+  color: #222;
+  margin-left: 10px;
 }
 
 /* end section-6 */
