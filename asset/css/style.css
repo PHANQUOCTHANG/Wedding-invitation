@@ -3,6 +3,7 @@
     margin: 0;
 } */
 
+/* Video cưới */
 .section-2-main {
     background-color: #F8F8F8;
     text-align: center;
@@ -33,9 +34,54 @@
     border-radius: 20px ;
 }
 
+/* End video cưới */
+
+
+/* Album hình cưới */
+.album .album-title, .album .album-desc {
+    text-align: center;
+}
+.album h2 {
+    font-family: var(--font-one--);
+    font-size: 48px;
+    font-weight: 500;
+    margin: 24px 0;
+}
+.album p {
+    font-family: var(--font-two--);
+    font-size: 20px;
+}
+.album .album-img {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+.album .album-img .col {
+    width: calc(50% - 4px);
+}
+.album .album-img .img img {
+    object-fit: cover;
+    width: 100%;
+}
+.album .see-all-album {
+    margin: 32px 0;
+    text-align: center;
+}
+.album .see-all-album p a {
+    font-family: var(--font-two--);
+    padding: 12px 24px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    background-color: #636363;
+    border-radius: 24px;
+}
+/* End album hình cưới */
+
+
  /* section-6 */
 
-.section-6-main {
+ .section-6-main {
     background-color: #F8F8F8;
     text-align: center  ;
     padding-top: 60px;
@@ -44,17 +90,41 @@
 
 
 .section-6-main h2 {
-    font-size:60px;
+    font-size:50px;
     font-weight: 500;
     font-family: var(--font-two--);
     margin: 0;
-    margin-bottom: 80px ;
+    margin-bottom: 60px ;
 }
 
 .section-6-main p {
-    font-size:20px;
+    font-size:18px;
     font-weight: 500;
     font-family: var(--font-two--);
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.section-6-main img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.section-6-main .img-6 {
+    padding: 0px 20px;
+    margin-top: 50px;
+}
+
+.section-6-main .text-6 {
+    font-family: var(--font-one--);
+    color: #949494;
+    font-size: 25px ;
+}
+
+.section-6-main .text-6 strong {
+    color: #222;
+    margin-left: 10px;
 }
 
 /* end section-6 */
