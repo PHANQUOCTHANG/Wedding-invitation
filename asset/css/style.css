@@ -22,10 +22,10 @@
 }
 
 .section-2-main #text {
-    font-size:20px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin-top: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin-top: 20px;
 }
 
 .section-2-main .iframe iframe {
@@ -35,7 +35,6 @@
 }
 
 /* End video cưới */
-
 
 /* Album hình cưới */
 .album .album-title,
@@ -201,53 +200,103 @@ div.selected {
 
 /* end section-4 */
 
- /* section-6 */
+/* section-6 */
 
- .section-6-main {
-    background-color: #F8F8F8;
-    text-align: center  ;
-    padding-top: 60px;
-    margin-top: 20px ;
+.section-6-main {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding-top: 60px;
+  margin-top: 20px;
 }
 
-
 .section-6-main h2 {
-    font-size:50px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin: 0;
-    margin-bottom: 60px ;
+  font-size: 50px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 .section-6-main p {
-    font-size:18px;
-    font-weight: 500;
-    font-family: var(--font-two--);
-    margin-top: 0px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-two--);
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
 .section-6-main img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .section-6-main .img-6 {
-    padding: 0px 20px;
-    margin-top: 50px;
+  padding: 0px 20px;
+  margin-top: 50px;
 }
 
 .section-6-main .text-6 {
-    font-family: var(--font-one--);
-    color: #949494;
-    font-size: 25px ;
+  font-family: var(--font-one--);
+  color: #949494;
+  font-size: 25px;
 }
 
 .section-6-main .text-6 strong {
-    color: #222;
-    margin-left: 10px;
+  color: #222;
+  margin-left: 10px;
 }
 
 /* end section-6 */
 
+/* section-9 */
+
+.section-9-main {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 60px;
+}
+
+.section-9-main .box-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-9-main .box-img {
+  width: 50%;
+  text-align: center;   
+}
+
+.section-9-main .header-main {
+  font-size: 50px;
+  font-family: var(--font-one--);
+  color: #474747;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 60px; 
+}
+
+.section-9-main .header-text {
+  font-size: 20px;
+  font-family: var(--font-two--);
+  font-weight: 530;
+  margin-bottom: 10px;
+}
+
+.section-9-main .text {
+  padding: 5px;
+  font-size: 18px ;
+  color: #212529;
+  text-align: center;
+  font-family: var(--font-two--);
+  margin-top: 0px;
+}
+
+.section-9-main .box-img img {
+  object-fit: cover;
+  border-radius: 50% ;
+  width: 200px ;
+  height: 200px ;
+}
+
+/* end section-9 */
