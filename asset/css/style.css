@@ -1,3 +1,8 @@
+/* *{
+    padding: 0;
+    margin: 0;
+} */
+
 .section-2-main {
     background-color: #F8F8F8;
     text-align: center;
@@ -17,9 +22,9 @@
 
 .section-2-main #text {
     font-size:20px;
-    margin-top: 20px ;
-    font-weight: 200;
+    font-weight: 500;
     font-family: var(--font-two--);
+    margin-top: 20px;
 }
 
 .section-2-main .iframe iframe {
@@ -27,3 +32,29 @@
     margin-bottom: 50px ;
     border-radius: 20px ;
 }
+
+ /* section-6 */
+
+.section-6-main {
+    background-color: #F8F8F8;
+    text-align: center  ;
+    padding-top: 60px;
+    margin-top: 20px ;
+}
+
+
+.section-6-main h2 {
+    font-size:60px;
+    font-weight: 500;
+    font-family: var(--font-two--);
+    margin: 0;
+    margin-bottom: 80px ;
+}
+
+.section-6-main p {
+    font-size:20px;
+    font-weight: 500;
+    font-family: var(--font-two--);
+}
+
+/* end section-6 */
