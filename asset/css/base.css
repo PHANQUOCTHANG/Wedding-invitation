@@ -4,8 +4,13 @@
   --font-two--: "Bellota Text", sans-serif;
   --color-one: #c6c6c6;
   --color-two: #5c636a;
-  --color-three: #f9f9f9;
+  --color-three: #3d3d3d;
   --color-btn: #636363;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .container {
   overflow: hidden;
@@ -14,6 +19,8 @@
   max-width: 575px;
   margin: 0 auto;
 }
-
-
-
+body {
+  font-family: var(--font-two--);
+  background: #ccc;
+  font-weight: 200 !important;
+}
