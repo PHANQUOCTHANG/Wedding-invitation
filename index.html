@@ -16,8 +16,24 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- thêm header navbar  -->
+
+    <header class="header hide">
+      <div class="container">
+        <div class="main-nav">
+          <div class="wedding-name">
+            <h3>V&H</h3>
+          </div>
+          <div id="menu-btn" class="wedding-selection">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- thêm header navbar  -->
+
     <!-- section-1 start -->
-    <div class="section-1">
+    <div class="section-1" id="link1">
       <div class="container">
         <div class="wrap">
           <div class="inner-title">
@@ -39,7 +55,7 @@
               Kiến Văn <small>&amp;</small> Việt Hoài
             </div>
           </div>
-          <div class="wedding-nav">
+          <div class="wedding-nav" id="pivot-nav">
             <div class="wedding-box">
               <a href="#">
                 <i class="fa-regular fa-message"></i>
@@ -66,7 +82,7 @@
 
     <!-- section-2 start  -->
     <!-- Video cưới -->
-    <div class="section-2">
+    <div class="section-2" id="link2">
       <div class="container">
         <div class="section-2-main">
           <p>Video Cưới</p>
@@ -91,7 +107,7 @@
 
     <!-- section-3 start  -->
     <!-- Album hình cưới -->
-    <div class="album">
+    <div class="album" id="link3">
       <div class="container">
         <div class="album-title">
           <h2>Album Hình Cưới</h2>
@@ -137,9 +153,8 @@
     <!-- End album hình cưới -->
     <!-- section-3 end  -->
 
-    
     <!-- section-4 start  -->
-    <div class="section-four">
+    <div class="section-four" id="link4">
       <div class="container">
         <div class="inner-wrap">
           <div class="inner-calendar">
@@ -188,7 +203,7 @@
     <!-- section-4 end  -->
 
     <!-- section-5 start -->
-    <div class="section-5">
+    <div class="section-5" id="link5">
       <div class="container">
         <div class="wrap">
           <h2>Chuyện tình yêu</h2>
@@ -279,7 +294,7 @@
     <!-- section-5 end -->
 
     <!-- section-6 -->
-    <div class="section-6">
+    <div class="section-6" id="link6">
       <div class="container">
         <div class="section-6-main">
           <h2>Lời ngỏ</h2>
@@ -303,7 +318,7 @@
 
     <!-- section-7 start -->
     <!-- Sự kiện cưới -->
-    <div class="wedding-event">
+    <div class="wedding-event" id="link7">
       <div class="container">
         <div class="wedding-event-title">
           <h2>Sự Kiện Cưới</h2>
@@ -400,7 +415,7 @@
     <!-- End sự kiện cưới -->
     <!-- section-7 end -->
     <!-- section-8 start  -->
-    <div class="section-bride-groom">
+    <div class="section-bride-groom" id="link8">
       <div class="container">
         <div class="inner-wrap">
           <h2 class="inner-title">Cô Dâu và Chú Rễ</h2>
@@ -481,7 +496,7 @@
 
     <!-- section-9 start  -->
     <!-- Phù dâu & Phù rể  -->
-    <div class="section-9">
+    <div class="section-9" id="link9">
       <div class="container">
         <div class="section-9-main">
           <p class="header-main">Phù Dâu & Phù Rể</p>
@@ -531,7 +546,7 @@
 
     <!-- section-10 start  -->
     <!-- Hộp mừng cưới -->
-    <div class="wedding-box">
+    <div class="wedding-box" id="link10">
       <div class="container">
         <div class="wedding-box-title">
           <h2>Hộp mừng cưới</h2>
@@ -569,7 +584,7 @@
     <!-- End hộp mừng cưới -->
     <!-- section-10 end  -->
     <!-- section-11 start  -->
-    <div class="section-11">
+    <div class="section-11" id="link11">
       <div class="container">
         <div class="wrap">
           <h2 class="inner-title">Sổ Lưu Bút</h2>
@@ -634,6 +649,45 @@
         </div>
       </div>
     </div>
+    <!-- thêm sub header navbar  -->
+    <div class="sub-menu">
+      <div class="wrap">
+        <div id="close-btn">
+          <i id="cls-btn" class="fa-solid fa-xmark"></i>
+        </div>
+        <ul>
+          <li>
+            <a href="#link2"> Video Cưới </a>
+          </li>
+          <li>
+            <a href="#link3"> Album Hình Cưới </a>
+          </li>
+          <li>
+            <a href="#link5"> Chuyện Tình Yêu </a>
+          </li>
+          <li>
+            <a href="#link6"> Lời Ngỏ </a>
+          </li>
+          <li>
+            <a href="#link7"> Sự kiện Cưới </a>
+          </li>
+          <li>
+            <a href="#link8"> Cô Dâu & Chú Rể </a>
+          </li>
+          <li>
+            <a href="#link9"> Phù Dâu & Phù Rể </a>
+          </li>
+          <li>
+            <a href="#link11"> Sổ Lưu Bút </a>
+          </li>
+          <li>
+            <a href="#link10"> Mừng Cưới </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="background hide" id="bgr"></div>
+    <!-- thêm sub header navbar  -->
     <script src="asset/Javascript/main.js"></script>
   </body>
 </html>

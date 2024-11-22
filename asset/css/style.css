@@ -1,3 +1,96 @@
+/* navbar start */
+.header {
+  z-index: 999;
+}
+.header .main-nav {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Đen nhạt với độ mờ */
+}
+.header .main-nav .wedding-name h3 {
+  letter-spacing: 5px;
+  font-family: var(--font-one--);
+  font-size: 20px;
+  color: #474747;
+  font-weight: 500;
+  cursor: pointer;
+}
+.header .main-nav .wedding-selection i {
+  cursor: pointer;
+  color: var(--color-two);
+
+  font-size: 20px;
+}
+/* navbar end */
+
+/* sub menu start */
+.sub-menu{
+}
+.sub-menu ul {
+  list-style: none;
+}
+.sub-menu a {
+  text-decoration: none;
+  color: #212529;
+  font-size: 19.5px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+.sub-menu .wrap #close-btn {
+  text-align: right;
+  margin-bottom: 20px;
+}
+.sub-menu .wrap #close-btn i {
+  cursor: pointer;
+  font-size: 25px;
+  color: gray;
+  transition: 0.3s ease-out;
+}
+.sub-menu .wrap #close-btn i:hover {
+  color: #212529;
+}
+.sub-menu .wrap {
+  transition: right 0.3s ease;
+  border-left: 1px solid #212529;
+  z-index: 1000;
+  padding: 20px;
+  position: fixed;
+  height: 100vh;
+  width: 250px;
+  background-color: white;
+  top: 0;
+  right: -250px;
+}
+.sub-menu .wrap ul li {
+  padding: 15px 0px;
+  position: relative;
+}
+.sub-menu .wrap ul li:hover > a {
+  font-size: 22.4px;
+}
+.sub-menu .wrap ul li::after {
+  transition: 0.3s ease-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #474747;
+  border: 1px solid #474747;
+  width: 50px;
+  height: 1px;
+}
+.sub-menu .wrap ul li:hover + li::after {
+  background-color: #df4758;
+}
+
+/* sub menu end */
 /* section 1 start  */
 .section-1 .wrap {
   color: var(--color-one);
@@ -202,7 +295,7 @@
   height: 180px;
 }
 .wedding-event .inner-wedding .event h3 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 .wedding-event .inner-wedding .event:nth-child(1) {
   height: 200px;
@@ -312,13 +405,13 @@
   margin: 48px 0;
 }
 .wedding-box .qr-box {
-    margin: 0 16px 32px;
+  margin: 0 16px 32px;
 }
 .wedding-box .qr-box h3 {
-    margin: 32px 0 ;
+  margin: 32px 0;
 }
 .wedding-box .qr-box p {
-    margin: 16px;
+  margin: 16px;
 }
 .wedding-box .wedding-box-desc p {
   font-family: var(--font-two--);
@@ -344,10 +437,6 @@
 
 /* section-4 */
 
-body {
-  font-family: var(--font-two--);
-  background-color: #ccc;
-}
 .section-four {
   font-family: var(--font-two--);
   /* background-color: var(--color-three);  */
@@ -467,6 +556,7 @@ div.selected {
 
 /* section 5 start  */
 .section-5 img {
+  z-index: 0;
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -487,10 +577,13 @@ div.selected {
   text-align: center;
 }
 .section-5 .wrap {
+  z-index: 1;
   padding: 48px 20px;
   background-color: white;
 }
 .section-5 .wrap .time-line-card {
+  z-index: 0;
+  background-color: white;
   padding: 20px 20px 30px;
   position: relative;
 }
@@ -671,7 +764,7 @@ div.selected {
   font-size: 20px;
   font-family: var(--font-two--);
   font-weight: 530;
-  margin-top:20px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
