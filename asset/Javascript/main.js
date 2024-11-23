@@ -98,77 +98,128 @@ document.addEventListener("DOMContentLoaded", () => {
   countdown(targetDate);
 });
 
-const listWedding = document.querySelector(".box-item-wedding") ;
-const buttonOpen = document.querySelector(".button-open") ;
-const buttonClose = document.querySelector(".button-close") ;
-const openVolum = document.querySelector(".open-volum") ;
-const closeVolum = document.querySelector(".close-volum") ;
-const textWeddings = document.querySelectorAll(".text-wedding") ;
-const audio = document.querySelector(".audio") ;
-const textVolum = document.querySelector(".text-volum") ;
+// navbar
 
-buttonOpen.addEventListener("click" , () => {
-  buttonOpen.style.display = "none";
-  listWedding.style.display = "block" ;
-})
+const navbar = document.querySelector(".header");
+const pivot = document.querySelector("#pivot-nav");
+const pivotPotision = pivot.offsetTop;
 
-buttonClose.addEventListener("click" , ()=>{
-  buttonOpen.style.display = "block" ;
-  listWedding.style.display = "none" ;
-})
+window.onscroll = () => {
+  if (window.pageYOffset >= pivotPotision) {
+    navbar.classList.add("sticky-nav");
+    navbar.classList.remove("hide");
+  } else {
+    navbar.classList.remove("sticky-nav");
+    navbar.classList.add("hide");
+  }
+};
 
-closeVolum.addEventListener("click" , ()=>{
-  openVolum.style.display = "block" ;
-  closeVolum.style.display = "none" ;
-  audio.play() ;
-})
+// menu -btn
+const btn_menu = document.querySelector("#menu-btn");
+const background = document.querySelector("#bgr");
+const subMenu = document.querySelector(".sub-menu .wrap");
+const closeBtn = document.querySelector("#cls-btn");
+btn_menu.addEventListener("click", function () {
+  if (!subMenu.classList.contains("show-menu")) {
+    console.log(subMenu);
+    background.classList.remove("hide");
+    subMenu.classList.add("show-menu");
+  } else {
+    background.classList.add("hide");
+    subMenu.classList.remove("show-menu");
+  }
+});
+closeBtn.addEventListener("click", function () {
+  if (subMenu.classList.contains("show-menu")) {
+    background.classList.add("hide");
+    subMenu.classList.remove("show-menu");
+  }
+});
 
-openVolum.addEventListener("click" , ()=>{
-  openVolum.style.display = "none" ;
-  closeVolum.style.display = "block"
-  audio.pause() ;
-})
+background.addEventListener("click", function () {
+  if (!background.classList.contains("hide")) {
+    background.classList.add("hide");
+    subMenu.classList.remove("show-menu");
+  }
+});
+
+const listWedding = document.querySelector(".box-item-wedding");
+const buttonOpen = document.querySelector(".button-open");
+const buttonClose = document.querySelector(".button-close");
+const openVolum = document.querySelector(".open-volum");
+const closeVolum = document.querySelector(".close-volum");
+const textWeddings = document.querySelectorAll(".text-wedding");
+const audio = document.querySelector(".audio");
+const textVolum = document.querySelector(".text-volum");
+const buttonWeddings = document.querySelectorAll(".button-wedding") ;
+
+console.log(buttonWeddings) ;
+
+function ClickEven() {
+  buttonOpen.addEventListener("click", () => {
+    buttonOpen.style.display = "none";
+    listWedding.style.display = "block";
+  });
+
+  buttonClose.addEventListener("click", () => {
+    buttonOpen.style.display = "block";
+    listWedding.style.display = "none";
+  });
+
+  closeVolum.addEventListener("click", () => {
+    openVolum.style.display = "block";
+    closeVolum.style.display = "none";
+    audio.play();
+    check = true;
+  });
+
+  openVolum.addEventListener("click", () => {
+    openVolum.style.display = "none";
+    closeVolum.style.display = "block";
+    audio.pause();
+  });
+}
 
 function timeShow() {
-  setTimeout(()=>{
+  setTimeout(() => {
     buttonOpen.style.display = "none";
-    listWedding.style.display = "block" ;
-  },4000)
+    listWedding.style.display = "block";
+  }, 4000);
 }
+
 
 function showText() {
-  let delay = 14000 ;
-  let id = 0 ;
+  let delay = 16000;
   setInterval(() => {
-    for (let i = 0 ; i < textWeddings.length ; i++) {
-      setTimeout(()=>{
-        textWeddings[i].style.opacity = "1" ;
-        textWeddings[i].style.visibility = "visible" ;
-      },3000*(i+1)) ;
-      setTimeout(()=>{
-        textWeddings[i].style.opacity = "0" ;
-        textWeddings[i].style.visibility = "hidden" ;
-      },3000*(i+1)+1500) ;
+    for (let i = 0; i < textWeddings.length; i++) {
+      setTimeout(() => {
+        textWeddings[i].style.opacity = "1";
+        textWeddings[i].style.visibility = "visible";
+        buttonWeddings[i].classList.add('shake')
+      }, 3000 * (i + 1));
+      setTimeout(() => {
+        box.classList.remove('shake'); // Xóa class sau 0.5s
+      }, 3000*(i+1)+500); // Thời gian phải khớp với animation trong CSS
+      setTimeout(() => {
+        textWeddings[i].style.opacity = "0";
+        textWeddings[i].style.visibility = "hidden";
+      }, 3000 * (i + 1) + 1500);
     }
-  } ,delay) ;
+  }, delay);
 }
 
-console.log(textVolum) ;
-
-function showTextAudio () {
-  setTimeout(()=>{
-    textVolum.style.opacity = "1" ;
-    textVolum.style.visibility = "visible"
-  },4000)
-  setTimeout (()=>{
-    textVolum.style.opacity = "0" ;
-    textVolum.style.visibility = "hidden"
-  },10000) ;
+function showTextAudio() {
+  setTimeout(() => {
+    textVolum.style.opacity = "1";
+    textVolum.style.visibility = "visible";
+  }, 4000);
+  setTimeout(() => {
+    textVolum.style.opacity = "0";
+    textVolum.style.visibility = "hidden";
+  }, 10000);
 }
 
-showTextAudio() ;
-timeShow() ; 
-showText() ;
-
-
-
+ClickEven();
+showTextAudio();
+timeShow();
+showText();

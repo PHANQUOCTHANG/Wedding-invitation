@@ -7,9 +7,15 @@
   --color-three: #3d3d3d;
   --color-btn: #636363;
 }
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+::after,
+::before {
   box-sizing: border-box;
 }
 .container {
@@ -23,4 +29,26 @@ body {
   font-family: var(--font-two--);
   background: #ccc;
   font-weight: 200 !important;
+  overflow-x: hidden;
+}
+.hide {
+  display: none;
+}
+.sticky-nav {
+  top: 0;
+  position: sticky;
+  left: 0;
+}
+.show-menu {
+  right: 0 !important;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: .5;
 }
