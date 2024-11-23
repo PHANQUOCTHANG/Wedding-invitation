@@ -1,6 +1,6 @@
 /* navbar start */
 .header {
-  z-index: 999;
+  z-index: 900;
 }
 .header .main-nav {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -11,7 +11,7 @@
   align-items: center;
   position: relative;
   height: 100%;
-  
+
   border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Đen nhạt với độ mờ */
 }
 .header .main-nav .wedding-name h3 {
@@ -31,7 +31,7 @@
 /* navbar end */
 
 /* sub menu start */
-.sub-menu{
+.sub-menu {
 }
 .sub-menu ul {
   list-style: none;
@@ -1039,6 +1039,7 @@ body {
 }
 
 .section-12 .box-item-wedding {
+  z-index: 2000;
   position: fixed;
   right: 55px;
   bottom: 60px;
@@ -1060,6 +1061,7 @@ body {
 }
 
 .section-12 .button-open {
+  z-index: 2000;
   position: fixed;
   right: 55px;
   bottom: 70px;
@@ -1071,6 +1073,7 @@ body {
 }
 
 .section-12 .button-wedding {
+
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -1083,6 +1086,7 @@ body {
 }
 
 .section-12 .text-wedding {
+  z-index: 2000;
   background-color: #df4758;
   width: 150px;
   height: 30px;
@@ -1124,6 +1128,7 @@ body {
 }
 
 .section-12 .text-volum {
+  z-index: 2000;
   background-color: white;
   height: 42px;
   padding: 20px;
@@ -1143,19 +1148,28 @@ body {
 
 /* End Các nút icon wedding . */
 
-
 /* Hiệu ứng rung  */
-   /* Keyframes cho hiệu ứng rung */
-   @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+/* Keyframes cho hiệu ứng rung */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-  /* Class áp dụng hiệu ứng */
-  .shake {
-    animation: shake 0.5s ease;
-  }
+/* Class áp dụng hiệu ứng */
+.shake {
+  animation: shake 0.5s ease;
+}
 /* End Hiệu ứng rung */
