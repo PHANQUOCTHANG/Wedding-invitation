@@ -97,3 +97,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const targetDate = new Date("2023-04-04T00:00:00");
   countdown(targetDate);
 });
+
+const listWedding = document.querySelector(".box-item-wedding") ;
+const buttonOpen = document.querySelector(".button-open") ;
+const buttonClose = document.querySelector(".button-close") ;
+const openVolum = document.querySelector(".open-volum") ;
+const closeVolum = document.querySelector(".close-volum") ;
+const textWeddings = document.querySelectorAll(".text-wedding") ;
+const audio = document.querySelector(".audio") ;
+const textVolum = document.querySelector(".text-volum") ;
+
+buttonOpen.addEventListener("click" , () => {
+  buttonOpen.style.display = "none";
+  listWedding.style.display = "block" ;
+})
+
+buttonClose.addEventListener("click" , ()=>{
+  buttonOpen.style.display = "block" ;
+  listWedding.style.display = "none" ;
+})
+
+closeVolum.addEventListener("click" , ()=>{
+  openVolum.style.display = "block" ;
+  closeVolum.style.display = "none" ;
+  audio.play() ;
+})
+
+openVolum.addEventListener("click" , ()=>{
+  openVolum.style.display = "none" ;
+  closeVolum.style.display = "block"
+  audio.pause() ;
+})
+
+function timeShow() {
+  setTimeout(()=>{
+    buttonOpen.style.display = "none";
+    listWedding.style.display = "block" ;
+  },4000)
+}
+
+function showText() {
+  let delay = 14000 ;
+  let id = 0 ;
+  setInterval(() => {
+    for (let i = 0 ; i < textWeddings.length ; i++) {
+      setTimeout(()=>{
+        textWeddings[i].style.opacity = "1" ;
+        textWeddings[i].style.visibility = "visible" ;
+      },3000*(i+1)) ;
+      setTimeout(()=>{
+        textWeddings[i].style.opacity = "0" ;
+        textWeddings[i].style.visibility = "hidden" ;
+      },3000*(i+1)+1500) ;
+    }
+  } ,delay) ;
+}
+
+console.log(textVolum) ;
+
+function showTextAudio () {
+  setTimeout(()=>{
+    textVolum.style.opacity = "1" ;
+    textVolum.style.visibility = "visible"
+  },4000)
+  setTimeout (()=>{
+    textVolum.style.opacity = "0" ;
+    textVolum.style.visibility = "hidden"
+  },10000) ;
+}
+
+showTextAudio() ;
+timeShow() ; 
+showText() ;
+
+
+

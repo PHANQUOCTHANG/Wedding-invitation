@@ -202,7 +202,7 @@
   height: 180px;
 }
 .wedding-event .inner-wedding .event h3 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 .wedding-event .inner-wedding .event:nth-child(1) {
   height: 200px;
@@ -312,13 +312,13 @@
   margin: 48px 0;
 }
 .wedding-box .qr-box {
-    margin: 0 16px 32px;
+  margin: 0 16px 32px;
 }
 .wedding-box .qr-box h3 {
-    margin: 32px 0 ;
+  margin: 32px 0;
 }
 .wedding-box .qr-box p {
-    margin: 16px;
+  margin: 16px;
 }
 .wedding-box .wedding-box-desc p {
   font-family: var(--font-two--);
@@ -671,7 +671,7 @@ div.selected {
   font-size: 20px;
   font-family: var(--font-two--);
   font-weight: 530;
-  margin-top:20px;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
@@ -934,3 +934,118 @@ div.selected {
   margin-bottom: 8px;
 }
 /* End Thank You  */
+
+/* Các nút icon wedding . */
+.section-12 .button-wedding i {
+  font-size: 22px;
+  color: white;
+}
+
+body {
+  position: relative;
+}
+
+.section-12 .box-item-wedding {
+  position: fixed;
+  right: 55px;
+  bottom: 60px;
+  display: none;
+}
+
+.section-12 .button-wedding-volum {
+  position: fixed;
+  left: 50px;
+  bottom: 60px;
+}
+
+.section-12 .open-volum {
+  display: none;
+}
+
+.section-12 .close-volum {
+  z-index: 1000;
+}
+
+.section-12 .button-open {
+  position: fixed;
+  right: 55px;
+  bottom: 70px;
+}
+
+.section-12 .box-button-wedding {
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.section-12 .button-wedding {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #df4758;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.section-12 .text-wedding {
+  background-color: #df4758;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: -160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-12 .box-button-wedding .button-wedding:hover + .text-wedding {
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+}
+
+.section-12 .box-button-wedding .text-wedding::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: -5px; /* Dịch sang phải để tạo mũi nhọn */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px; /* Chiều rộng mũi nhọn */
+  border-color: transparent transparent transparent #df4758; /* Màu nền của nút */
+}
+
+.section-12 .text-volum {
+  background-color: white;
+  height: 42px;
+  padding: 20px;
+  position: fixed;
+  bottom: 60px;
+  left: 75px;
+  border-radius: 10px;
+  /* display: none; */
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* End Các nút icon wedding . */
