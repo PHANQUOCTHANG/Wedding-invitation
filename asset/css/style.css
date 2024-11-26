@@ -1050,18 +1050,15 @@ body {
   position: fixed;
   left: 50px;
   bottom: 60px;
+  z-index: 5000;
 }
 
 .section-12 .open-volum {
   display: none;
 }
 
-.section-12 .close-volum {
-  z-index: 1000;
-}
-
 .section-12 .button-open {
-  z-index: 2000;
+  z-index: 1000;
   position: fixed;
   right: 55px;
   bottom: 70px;
@@ -1073,7 +1070,6 @@ body {
 }
 
 .section-12 .button-wedding {
-
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -1128,13 +1124,12 @@ body {
 }
 
 .section-12 .text-volum {
-  z-index: 2000;
   background-color: white;
   height: 42px;
   padding: 20px;
   position: fixed;
   bottom: 60px;
-  left: 75px;
+  left: 73px;
   border-radius: 20px;
   /* display: none; */
   font-weight: 500;
@@ -1144,6 +1139,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
+  z-index: 2000;
 }
 
 /* End Các nút icon wedding . */
