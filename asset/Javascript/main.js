@@ -223,3 +223,9 @@ ClickEven();
 showTextAudio();
 timeShow();
 showText();
+
+
+// Links 
+
+import {Links} from "./Link.js" ;
+
