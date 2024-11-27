@@ -30,13 +30,18 @@ body {
   background: #ccc;
   font-weight: 200 !important;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* height: 100vh; */
 }
 .hide {
   display: none;
 }
 .sticky-nav {
   top: 0;
-  position: sticky;
+  position: fixed;
+  right: 0;
   left: 0;
 }
 .show-menu {
@@ -50,5 +55,5 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #000;
-  opacity: .5;
+  opacity: 0.5;
 }
