@@ -235,6 +235,8 @@
   margin: 0 16px 32px;
 }
 .album .album-img {
+  margin-left: 16px;
+  margin-right: 16px;
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -291,7 +293,7 @@
   background-color: #f2f2f2;
   border-radius: 12px;
   display: flex;
-  gap: 32px;
+  gap: 24px;
   height: 180px;
 }
 .wedding-event .inner-wedding .event h3 {
@@ -427,6 +429,9 @@
   width: 48%;
   border: 1px dashed #000;
   border-radius: 4px;
+}
+.wedding-box .qr:hover {
+  box-shadow: 1px 1px 18px #888888;
 }
 .wedding-box .qr .qr-img img {
   width: 75%;
