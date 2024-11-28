@@ -436,6 +436,10 @@ const audio = document.querySelector(".audio");
 const textVolum = document.querySelector(".text-volum");
 const buttonWeddings = document.querySelectorAll(".button-wedding");
 
+setTimeout (() => {
+  closeVolum.style.display = "block" ;
+},2000)
+
 function ClickEven() {
   buttonOpen.addEventListener("click", () => {
     buttonOpen.style.display = "none";

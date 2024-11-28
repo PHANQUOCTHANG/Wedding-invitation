@@ -231,6 +231,8 @@
   background-color: #f8f8f8;
   text-align: center;
   padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .section-2-main * {
   transition: all 0.5s ease-in-out;
@@ -262,7 +264,10 @@
   margin-top: 40px;
   margin-bottom: 50px;
   border-radius: 20px;
+  width: 100%;
+  height: 361px;
 }
+
 .section-2-main .iframe {
   opacity: 0;
   transform: translateY(100px);
@@ -898,10 +903,13 @@ div.selected {
   margin-bottom: 10px;
   opacity: 0;
   transform: translateY(100px);
+  padding-left: 40px;
+  padding-right: 40px;
+  line-height: 2;
 }
 
 .section-6-main img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
 }
@@ -919,6 +927,7 @@ div.selected {
   font-size: 25px;
   opacity: 0;
   transform: translateY(100px);
+  font-weight: 500;
 }
 
 .section-6-main .text-6 strong {
@@ -980,6 +989,7 @@ div.selected {
   text-align: center;
   font-family: var(--font-two--);
   margin-top: 0px;
+  font-weight: 500;
 }
 
 .section-9-main .box-img img {
@@ -1290,6 +1300,10 @@ body {
   display: none;
 }
 
+.section-12 .close-volum {
+  display: none;
+}
+
 .section-12 .button-open {
   z-index: 1000;
   position: fixed;
@@ -1373,7 +1387,7 @@ body {
   visibility: hidden;
   transition: all 0.5s ease;
   z-index: 2000;
-  padding-left: 50px ;
+  padding-left: 50px;
 }
 
 /* End Các nút icon wedding . */
@@ -1434,3 +1448,111 @@ body {
     transform: translateY(100vh) translateX(calc(10px - 5vw));
   }
 }
+
+/* responsive  */
+@media (max-width: 414px) {
+  /*  video cưới */
+  .section-2-main .iframe iframe {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    width: 100%;
+    height: 221px;
+  }
+  .section-2-main p:first-child {
+    font-size: 40px;
+  }
+  .section-2-main #text {
+    font-size: 15px;
+  }
+
+   /* end video cưới */
+
+   /* lời ngỏ */
+  .section-6-main p {
+    font-size: 16px;
+  }
+
+  .section-6-main h2 {
+    font-size: 40px;
+  }
+  /* end lời ngỏ . */
+
+  /* Phù dâu & Phù rể  */
+  .section-9-main .box-img {
+    width: 100%;
+    transform: translateY(100px);
+    margin-top: 70px;
+  }
+
+  .section-9-main .box-img:first-child {
+    margin-top: 0px;
+  }
+
+  .section-9-main .header-main {
+    font-size: 40px;
+    transform: translateY(100px);
+  }
+
+  .section-9-main .box-img img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 260px;
+    height: 260px;
+  }
+  /* end Phù dâu & Phù rể */
+
+  /* Button-wedding */
+  .section-12 .box-item-wedding {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .section-12 .button-open {
+    right: 20px;
+    bottom: 30px;
+  }
+
+  .section-12 .button-wedding-volum {
+    position: fixed;
+    left: 20px;
+    bottom: 30px;
+    z-index: 5000;
+  }
+
+  .section-12 .text-volum {
+    left: 20px;
+    bottom: 30px;
+  }
+  /* end Button-wedding */
+}
+
+@media (max-width:320px) {
+  /*  video cưới */
+  .section-2-main .iframe iframe {
+    width: 100%;
+    height: 161px;
+  }
+  .section-2-main p:first-child {
+    font-size: 40px;
+  }
+   /* end video cưới */
+
+   /* lời ngỏ */
+   .section-6-main p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* end lời ngỏ . */
+
+  /* Phù dâu & Phù rể  */
+  .section-9-main .box-img img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+  }
+  /* end Phù dâu & Phù rể */
+}
+
+/* end responsive */
