@@ -219,6 +219,31 @@
 .section-1 .wrap .wedding-nav .wedding-box:hover {
   background-color: var(--color-two);
 }
+@media (max-width: 510px) {
+  .section-1 .wrap .wedding-nav {
+    flex-wrap: wrap;
+  }
+  .section-1 .wrap .wedding-nav .wedding-box {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .section-1 .wrap .inner-img .wedding-title {
+    bottom: -30px;
+  }
+  .section-1 .wrap .inner-img .wedding-desc {
+    top: 70px;
+  }
+
+}
+@media (max-width: 375px) {
+  .section-1 .wrap .inner-img .wedding-title {
+    bottom: 0px;
+  }
+  .section-1 .wrap .inner-img .wedding-desc {
+    top: 50px;
+  }
+}
 /* section 1 end  */
 
 /* *{
@@ -1450,7 +1475,7 @@ body {
 }
 
 /* responsive  */
-@media (max-width: 414px) {
+@media (max-width: 475px) {
   /*  video cưới */
   .section-2-main .iframe iframe {
     margin-top: 40px;
@@ -1466,9 +1491,9 @@ body {
     font-size: 15px;
   }
 
-   /* end video cưới */
+  /* end video cưới */
 
-   /* lời ngỏ */
+  /* lời ngỏ */
   .section-6-main p {
     font-size: 16px;
   }
@@ -1527,7 +1552,7 @@ body {
   /* end Button-wedding */
 }
 
-@media (max-width:320px) {
+@media (max-width: 320px) {
   /*  video cưới */
   .section-2-main .iframe iframe {
     width: 100%;
@@ -1536,10 +1561,10 @@ body {
   .section-2-main p:first-child {
     font-size: 40px;
   }
-   /* end video cưới */
+  /* end video cưới */
 
-   /* lời ngỏ */
-   .section-6-main p {
+  /* lời ngỏ */
+  .section-6-main p {
     padding-left: 20px;
     padding-right: 20px;
   }
