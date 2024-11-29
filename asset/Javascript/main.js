@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const today = new Date();
   const currentMonth = today.getMonth();
@@ -532,3 +534,25 @@ function createSnowflake() {
 
 // Tạo tuyết rơi liên tục
 setInterval(createSnowflake, 100); // Tạo mỗi 100ms
+
+
+// Links variables .
+
+import {Links} from "./Link.js"
+
+// lời ngỏ (section-6) .
+const img_6_1 = document.querySelector("#img-6-1") ;
+img_6_1.src = Links.img_6_1 ;
+// end lời ngỏ .
+
+
+// phù dâu & phù rể (section-9) .
+const img_9_1 = document.querySelector("#img-9-1") ;
+img_9_1.src = Links.img_9_1 ;
+const img_9_2 = document.querySelector("#img-9-2") ;
+img_9_2.src = Links.img_9_2 ;
+const img_9_3 = document.querySelector("#img-9-3") ;
+img_9_3.src = Links.img_9_3 ;
+const img_9_4 = document.querySelector("#img-9-4") ;
+img_9_4.src = Links.img_9_4 ;
+// end phù dâu & phù rể .

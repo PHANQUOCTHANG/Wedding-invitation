@@ -1287,7 +1287,7 @@ body {
 .section-12 .button-wedding-volum {
   position: fixed;
   left: 50px;
-  bottom: 60px;
+  bottom: 70px;
   z-index: 5000;
 }
 
@@ -1366,7 +1366,7 @@ body {
   height: 42px;
   padding: 20px;
   position: fixed;
-  bottom: 60px;
+  bottom: 70px;
   left: 50px;
   border-radius: 20px;
   /* display: none; */
