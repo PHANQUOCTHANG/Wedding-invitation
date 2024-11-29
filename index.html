@@ -54,6 +54,44 @@
       </div>
     </div>
     <div class="background hide" id="bgr"></div>
+    <div class="payment hide" id="pay">
+      <div class="wedding-box">
+        <div class="container">
+          <div class="wrap-icon"><i class="fa-solid fa-xmark"></i></div>
+          <div class="wedding-box-title-extra">
+            <h2>Hộp mừng cưới</h2>
+          </div>
+          <div class="wedding-box-desc-extra">
+            <p>
+              Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt
+              như đám cưới của chúng tôi.
+            </p>
+          </div>
+          <div class="qr-box">
+            <div class="qr">
+              <h3>ĐẾN CHÚ RỂ</h3>
+              <div class="qr-img">
+                <img src="./asset/img/QR.jpg" alt="" />
+              </div>
+              <p>Ngân hàng: VietinBank</p>
+              <p>Tên tài khoản: Trần Quốc Khánh</p>
+              <p>Số tài khoản: 104867404956</p>
+              <p>Chi nhánh: THU DUC - PGD METRO</p>
+            </div>
+            <div class="qr">
+              <h3>ĐẾN CÔ DÂU</h3>
+              <div class="qr-img">
+                <img src="./asset/img/QR.jpg" alt="" />
+              </div>
+              <p>Ngân hàng: VietinBank</p>
+              <p>Tên tài khoản: Trần Quốc Khánh</p>
+              <p>Số tài khoản: 104867404956</p>
+              <p>Chi nhánh: THU DUC - PGD METRO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- thêm sub header navbar  -->
 
     <!-- thêm header navbar  -->
@@ -108,7 +146,7 @@
                 <span>Xác nhận tham dự</span>
               </a>
             </div>
-            <div class="wedding-box">
+            <div class="wedding-box pay-btn">
               <a href="#">
                 <i class="fa-solid fa-sack-dollar"></i>
                 <span>Mừng cưới</span>
@@ -334,12 +372,10 @@
         <div class="section-6-main">
           <h2 class="item">Lời ngỏ</h2>
           <p class="item">
-            Cảm ơn tất cả những người bạn thân yêu của tôi! 
-            Tôi biết các bạn rất bận rộn, bận rộn với công 
-            việc, bận rộn với công việc gia đình… 
-            Nhưng tất cả đã có mặt hôm nay để chúc mừng 
-            tình yêu và hạnh phúc của chúng tôi. 
-            Một lần nữa chân thành cảm ơn tất cả các bạn! 
+            Cảm ơn tất cả những người bạn thân yêu của tôi! Tôi biết các bạn rất
+            bận rộn, bận rộn với công việc, bận rộn với công việc gia đình…
+            Nhưng tất cả đã có mặt hôm nay để chúc mừng tình yêu và hạnh phúc
+            của chúng tôi. Một lần nữa chân thành cảm ơn tất cả các bạn!
           </p>
           <div class="img-6 item">
             <img src="#" alt="" id="img-6-1" />
@@ -631,14 +667,26 @@
             Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến
             đám cưới của chúng tôi!
           </h3>
-          <form action="">
+          <form id="greetForm" action="">
             <div class="inner-form">
               <div class="information">
                 <div class="name">
-                  <input type="text" required placeholder="Nhập tên của bạn*" />
+                  <input
+                    id="nameInput"
+                    type="text"
+                    required
+                    placeholder="Nhập tên của bạn*"
+                  />
+                  <p class="error-message" id="nameError"></p>
                 </div>
                 <div class="email">
-                  <input type="email" required placeholder="E-mail" />
+                  <input
+                    id="emailInput"
+                    type="email"
+                    required
+                    placeholder="E-mail"
+                  />
+                  <p class="error-message" id="emailError"></p>
                 </div>
               </div>
 
@@ -646,7 +694,7 @@
                 <textarea
                   placeholder="Nhập lời chúc của bạn*"
                   name=""
-                  id=""
+                  id="greetInput"
                 ></textarea>
 
                 <div class="add-greet">
@@ -658,9 +706,10 @@
                   </span>
                 </div>
               </div>
+              <p class="error-message" id="greetError"></p>
 
               <div class="greet-btn">
-                <button>GỬI LỜI CHÚC</button>
+                <button type="submit">GỬI LỜI CHÚC</button>
               </div>
             </div>
           </form>
@@ -704,7 +753,7 @@
           </div>
           <div class="text-wedding">Xác nhận tham dự</div>
         </div>
-        <div class="box-button-wedding">
+        <div class="box-button-wedding pay-btn2">
           <div class="button-wedding">
             <a href=""><i class="fa-solid fa-sack-dollar"></i></a>
           </div>
@@ -718,7 +767,7 @@
       </div>
 
       <div class="button-open">
-          <div class="button-wedding"><i class="fa-solid fa-bars"></i></div>
+        <div class="button-wedding"><i class="fa-solid fa-bars"></i></div>
       </div>
 
       <div class="button-wedding-volum close-volum">

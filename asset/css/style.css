@@ -558,6 +558,13 @@
   font-weight: 500;
   margin: 48px 0;
 }
+.wedding-box .wedding-box-title-extra h2 {
+  font-family: var(--font-one--);
+  font-size: 48px;
+  font-weight: 500;
+  margin: 48px 0;
+  text-align: center;
+}
 .wedding-box .qr-box {
   margin: 0 16px 32px;
 }
@@ -571,6 +578,12 @@
   font-family: var(--font-two--);
   font-size: 20px;
   margin: 0 16px 32px;
+}
+.wedding-box .wedding-box-desc-extra p {
+  font-family: var(--font-two--);
+  font-size: 20px;
+  margin: 0 16px 32px;
+  text-align: center;
 }
 .wedding-box .qr-box {
   display: flex;
@@ -1200,26 +1213,40 @@ div.selected {
 }
 .section-11 .wrap .inner-form input,
 .section-11 .wrap .inner-form textarea {
-  border: none;
-  outline: none;
   padding: 10px;
   height: 100%;
   width: 100%;
+  border: 1px solid #ddd;
+  transition: 0.1s;
+}
+.section-11 .wrap .inner-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.section-11 .wrap .inner-form input {
+  border-radius: 7px;
+  height: 40px;
 }
 .section-11 .wrap .inner-form .information {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
+.section-11 .wrap .inner-form .error-message {
+  font-size: 15px;
+}
 .section-11 .wrap .inner-form .information > div {
-  width: calc(50% - 10px);
   border-radius: 7px;
+  transition: 0.1s;
+  width: calc(50% - 10px);
+  border: none;
+  outline: none;
   overflow: hidden;
-  height: 40px;
+  /* height: 40px; */
 }
-.section-11 .wrap .inner-form .information > div:focus-within {
-  border: 3px solid lightskyblue;
-}
+
 .section-11 .wrap .inner-form .send-greet {
   display: block;
   width: 100%;
@@ -1243,6 +1270,9 @@ div.selected {
   resize: none;
   padding: 6px 12px;
   height: 70px;
+  border: none;
+  outline: none;
+  background-color: white !important;
 }
 .section-11 .wrap .inner-form .send-greet .add-greet {
   padding: 10px;
@@ -1278,6 +1308,28 @@ div.selected {
   margin-top: 15px;
   text-align: left;
   padding: 16px 24px;
+  overflow: auto;
+}
+.section-11 .wrap .show-comment .box-comment{
+  position: relative;
+  padding: 20px 0;
+}
+.section-11 .wrap .show-comment .box-comment:last-child{
+  padding-bottom: 0;
+}
+.section-11 .wrap .show-comment .box-comment:last-child::before{
+  display: none;
+}
+.section-11 .wrap .show-comment .box-comment::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  left: 0;
+  bottom: 0;
+
 }
 .section-11 .wrap .show-comment .box-comment .title {
   font-size: 24px;
@@ -1437,7 +1489,42 @@ body {
   z-index: 2000;
   padding-left: 50px;
 }
+/* extra div  */
+.payment {
+  position: fixed;
+  z-index: 1000;
+  /* max-width: 576px; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  padding: 40px 20px;
+}
+.payment .wedding-box {
+  z-index: 1001;
 
+  position: relative;
+  height: 100%;
+}
+.payment .wedding-box .container {
+  background-color: white;
+  max-width: 700px;
+  position: relative;
+}
+.payment .wedding-box .wrap-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #df4758;
+  cursor: pointer;
+}
 /* End Các nút icon wedding . */
 
 /* Hiệu ứng rung  */

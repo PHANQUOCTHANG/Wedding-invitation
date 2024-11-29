@@ -400,6 +400,28 @@ const btn_menu = document.querySelector("#menu-btn");
 const background = document.querySelector("#bgr");
 const subMenu = document.querySelector(".sub-menu .wrap");
 const closeBtn = document.querySelector("#cls-btn");
+const pay = document.querySelector("#pay");
+const paybtn1 = document.querySelector(".pay-btn");
+const paybtn2 = document.querySelector(".pay-btn2");
+const closePay = document.querySelector(".wrap-icon");
+const paybtnContent = document.querySelector(".payment .wedding-box");
+
+paybtn1.addEventListener("click", function (e) {
+  e.preventDefault();
+  pay.classList.remove("hide");
+});
+paybtn2.addEventListener("click", function (e) {
+  e.preventDefault();
+  pay.classList.remove("hide");
+});
+pay.addEventListener("click", function (event) {
+  if (!paybtnContent.contains(event.target)) {
+    pay.classList.toggle("hide");
+  }
+});
+closePay.addEventListener("click", function () {
+  pay.classList.toggle("hide");
+});
 btn_menu.addEventListener("click", function () {
   if (!subMenu.classList.contains("show-menu")) {
     console.log(subMenu);
@@ -542,27 +564,129 @@ setInterval(createSnowflake, 100); // Tạo mỗi 100ms
 import { Links } from "./Link.js";
 
 // lời ngỏ (section-6) .
-const img_6_1 = document.querySelector("#img-6-1");
-img_6_1.src = Links.img_6_1;
+// const img_6_1 = document.querySelector("#img-6-1");
+// img_6_1.src = Links.img_6_1;
 // end lời ngỏ .
 
 // phù dâu & phù rể (section-9) .
-const img_9_1 = document.querySelector("#img-9-1");
-img_9_1.src = Links.img_9_1;
-const img_9_2 = document.querySelector("#img-9-2");
-img_9_2.src = Links.img_9_2;
-const img_9_3 = document.querySelector("#img-9-3");
-img_9_3.src = Links.img_9_3;
-const img_9_4 = document.querySelector("#img-9-4");
-img_9_4.src = Links.img_9_4;
+// const img_9_1 = document.querySelector("#img-9-1");
+// img_9_1.src = Links.img_9_1;
+// const img_9_2 = document.querySelector("#img-9-2");
+// img_9_2.src = Links.img_9_2;
+// const img_9_3 = document.querySelector("#img-9-3");
+// img_9_3.src = Links.img_9_3;
+// const img_9_4 = document.querySelector("#img-9-4");
+// img_9_4.src = Links.img_9_4;
 // end phù dâu & phù rể .
 
+// const img_3_1 = document.querySelector("#img-3-1");
+// img_3_1.src = Links.img_3_1;
+// const img_3_2 = document.querySelector("#img-3-2");
+// img_3_2.src = Links.img_3_2;
+// const img_3_3 = document.querySelector("#img-3-3");
+// img_3_3.src = Links.img_3_3;
+// const img_3_4 = document.querySelector("#img-3-4");
+// img_3_4.src = Links.img_3_4;
+//
+//greet
+function validateInput(input, errorElement, errorMessage) {
+  if (!input.value.trim() || !input.checkValidity()) {
+    errorElement.textContent = errorMessage;
+    errorElement.style.display = "block";
+    input.style.borderColor = "#e63946";
+    input.style.backgroundColor = "#ffe6e6";
+    return 0;
+  } else {
+    errorElement.textContent = "";
+    errorElement.style.display = "none";
+    input.style.borderColor = "#007bff";
+    input.style.backgroundColor = "#e6ffe6";
+    return 1;
+  }
+}
+function validateNameLength(input, errorElement, errorMessage) {
+  if (input.value.length < 5) {
+    errorElement.textContent = errorMessage;
+    errorElement.style.display = "block";
+    input.style.borderColor = "#e63946";
+    input.style.backgroundColor = "#ffe6e6";
+    return 0;
+  } else {
+    errorElement.textContent = "";
+    errorElement.style.display = "none";
+    input.style.borderColor = "#007bff";
+    input.style.backgroundColor = "#e6ffe6";
+    return 1;
+  }
+}
+// Kiểm tra từng input khi blur
+console.log(1);
+document.getElementById("nameInput").addEventListener("blur", function () {
+  if (
+    validateInput(
+      this,
+      document.getElementById("nameError"),
+      "Tên không được để trống!"
+    )
+  ) {
+    validateNameLength(
+      this,
+      document.getElementById("nameError"),
+      "Tên phải lớn hơn 5 kí tự"
+    );
+  }
+});
 
-const img_3_1 = document.querySelector("#img-3-1");
-img_3_1.src = Links.img_3_1;
-const img_3_2 = document.querySelector("#img-3-2");
-img_3_2.src = Links.img_3_2;
-const img_3_3 = document.querySelector("#img-3-3");
-img_3_3.src = Links.img_3_3;
-const img_3_4 = document.querySelector("#img-3-4");
-img_3_4.src = Links.img_3_4;
+document.getElementById("emailInput").addEventListener("blur", function () {
+  validateInput(
+    this,
+    document.getElementById("emailError"),
+    "Email không hợp lệ!"
+  );
+});
+
+document.getElementById("greetInput").addEventListener("blur", function () {
+  validateInput(
+    this,
+    document.getElementById("greetError"),
+    "Lời chúc không được để trống!"
+  );
+});
+function addNewComment(name, comment) {
+  const parent = document.querySelector(".show-comment");
+  const newComment = document.createElement("div");
+  newComment.classList.add("box-comment");
+  newComment.innerHTML = `<h2 class="title">${name}</h2>
+  <p class="detail">${comment}</p>`;
+  if (parent.firstChild) {
+    parent.insertBefore(newComment, parent.firstChild);
+  } else {
+    parent.appendChild(newComment);
+  }
+}
+// Xử lý khi submit
+document.getElementById("greetForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nameInput = document.getElementById("nameInput");
+  const emailInput = document.getElementById("emailInput");
+  const greetInput = document.getElementById("greetInput");
+
+  const nameError = document.getElementById("nameError");
+  const emailError = document.getElementById("emailError");
+  const greetError = document.getElementById("greetError");
+
+  validateInput(nameInput, nameError, "Tên không được để trống!");
+  validateNameLength(nameInput, nameError, "Tên phải dài hơn 5 kí tự!");
+  validateInput(emailInput, emailError, "Email không hợp lệ!");
+  validateInput(greetInput, greetError, "Lời chúc không được để trống!");
+
+  if (
+    !nameError.textContent &&
+    !emailError.textContent &&
+    !greetError.textContent
+  ) {
+    addNewComment(nameInput.value.trim(), greetInput.value.trim());
+    alert("Lời chúc của bạn đã được gửi thành công!");
+    document.getElementById("greetForm").reset();
+  }
+});
