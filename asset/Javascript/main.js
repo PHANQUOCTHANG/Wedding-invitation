@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const today = new Date();
   const currentMonth = today.getMonth();
@@ -114,7 +112,6 @@ const s0_img = document.querySelector(".section-1 .wrap .inner-img");
 const weddingBox = document.querySelectorAll(
   ".section-1 .wrap .wedding-nav .wedding-box"
 );
-const pivot1 = document.querySelector(".wedding-nav").offsetTop;
 // animation section-2
 const s2_pList = document.querySelectorAll(".section-2-main > p");
 
@@ -192,27 +189,28 @@ window.onscroll = () => {
     s0_img.classList.remove("moveFromBottom");
   }
   //animate section-1
-  if (window.pageYOffset + window.innerHeight >= pivot1 + 150) {
-    weddingBox.forEach((value, key, arr) => {
-      if (key === 0) {
+  weddingBox.forEach((value, key, arr) => {
+    if (key === 0) {
+      if (window.pageYOffset + window.innerHeight >= value.offsetTop + 50) {
         arr[key].classList.add("moveFromLeft");
-      } else if (key === 1) {
+      } else {
+        arr[key].classList.remove("moveFromLeft");
+      }
+    } else if (key === 1) {
+      if (window.pageYOffset + window.innerHeight >= value.offsetTop + 50) {
         arr[key].classList.add("moveFromBottom");
       } else {
-        arr[key].classList.add("moveFromRight");
-      }
-    });
-  } else {
-    weddingBox.forEach((value, key, arr) => {
-      if (key === 0) {
-        arr[key].classList.remove("moveFromLeft");
-      } else if (key === 1) {
         arr[key].classList.remove("moveFromBottom");
+      }
+    } else {
+      if (window.pageYOffset + window.innerHeight >= value.offsetTop + 50) {
+        arr[key].classList.add("moveFromRight");
       } else {
         arr[key].classList.remove("moveFromRight");
       }
-    });
-  }
+    }
+  });
+
   //animate section-2
   s2_pList.forEach((element) => {
     if (window.pageYOffset + window.innerHeight >= element.offsetTop + 100) {
@@ -436,6 +434,10 @@ const audio = document.querySelector(".audio");
 const textVolum = document.querySelector(".text-volum");
 const buttonWeddings = document.querySelectorAll(".button-wedding");
 
+setTimeout(() => {
+  closeVolum.style.display = "block";
+}, 2000);
+
 function ClickEven() {
   buttonOpen.addEventListener("click", () => {
     buttonOpen.style.display = "none";
@@ -535,24 +537,32 @@ function createSnowflake() {
 // Tạo tuyết rơi liên tục
 setInterval(createSnowflake, 100); // Tạo mỗi 100ms
 
-
 // Links variables .
 
-import {Links} from "./Link.js"
+import { Links } from "./Link.js";
 
 // lời ngỏ (section-6) .
-const img_6_1 = document.querySelector("#img-6-1") ;
-img_6_1.src = Links.img_6_1 ;
+const img_6_1 = document.querySelector("#img-6-1");
+img_6_1.src = Links.img_6_1;
 // end lời ngỏ .
 
-
 // phù dâu & phù rể (section-9) .
-const img_9_1 = document.querySelector("#img-9-1") ;
-img_9_1.src = Links.img_9_1 ;
-const img_9_2 = document.querySelector("#img-9-2") ;
-img_9_2.src = Links.img_9_2 ;
-const img_9_3 = document.querySelector("#img-9-3") ;
-img_9_3.src = Links.img_9_3 ;
-const img_9_4 = document.querySelector("#img-9-4") ;
-img_9_4.src = Links.img_9_4 ;
+const img_9_1 = document.querySelector("#img-9-1");
+img_9_1.src = Links.img_9_1;
+const img_9_2 = document.querySelector("#img-9-2");
+img_9_2.src = Links.img_9_2;
+const img_9_3 = document.querySelector("#img-9-3");
+img_9_3.src = Links.img_9_3;
+const img_9_4 = document.querySelector("#img-9-4");
+img_9_4.src = Links.img_9_4;
 // end phù dâu & phù rể .
+
+
+const img_3_1 = document.querySelector("#img-3-1");
+img_3_1.src = Links.img_3_1;
+const img_3_2 = document.querySelector("#img-3-2");
+img_3_2.src = Links.img_3_2;
+const img_3_3 = document.querySelector("#img-3-3");
+img_3_3.src = Links.img_3_3;
+const img_3_4 = document.querySelector("#img-3-4");
+img_3_4.src = Links.img_3_4;
