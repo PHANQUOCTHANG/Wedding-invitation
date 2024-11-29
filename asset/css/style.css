@@ -234,7 +234,6 @@
   .section-1 .wrap .inner-img .wedding-desc {
     top: 70px;
   }
-
 }
 @media (max-width: 375px) {
   .section-1 .wrap .inner-img .wedding-title {
@@ -687,7 +686,7 @@ div.selected {
   content: " ";
   background-color: #474747;
   height: 1px;
-  width: 420px;
+  width: 100%;
   display: inline-block;
   /* width: 420px; */
 }
@@ -695,7 +694,7 @@ div.selected {
   content: " ";
   background-color: #474747;
   height: 1px;
-  width: 420px;
+  width: 100%;
   margin-top: 30px;
   display: inline-block;
   /* width: 420px; */
@@ -738,6 +737,16 @@ div.selected {
 .inner-countdown.moveFromRight {
   opacity: 1;
   transform: translateX(0);
+}
+@media (max-width: 475px) {
+  .section-four .container .inner-wrap {
+    padding: 48px 20px;
+  }
+}
+@media (max-width: 325px) {
+  .section-four #inner-calendar-body td {
+    padding: 5px;
+  }
 }
 /* end section-4 */
 
@@ -1039,7 +1048,7 @@ div.selected {
 }
 .section-bride-groom .inner-wrap {
   background-color: #f9f9f9;
-  padding: 48px 0;
+  padding: 48px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1053,15 +1062,24 @@ div.selected {
   opacity: 0;
   transform: translateY(100px);
 }
+.section-bride-groom .inner-wrap .inner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .section-bride-groom .inner-wrap .inner-box .inner-image {
   margin-top: 30px;
   width: 350px;
   height: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 16px;
   opacity: 0;
   transform: rotateY(180deg);
+}
+@media (max-width: 375px) {
+  .section-bride-groom .inner-wrap .inner-box .inner-image {
+    width: 300px;
+    height: 300px;
+  }
 }
 .section-bride-groom .inner-wrap .inner-box .inner-image img {
   width: 100%;
@@ -1511,8 +1529,13 @@ body {
   .wedding-event .inner-wedding .event {
     flex-direction: column;
   }
+  .wedding-event .container .inner-wedding {
+    padding: 20px;
+  }
   .wedding-event .container .inner-wedding .event {
+    margin: 0;
     height: 500px;
+    width: 100%;
   }
   .wedding-event .inner-wedding .event-img {
     width: 100%;
@@ -1557,7 +1580,16 @@ body {
     height: 260px;
   }
   /* end Phù dâu & Phù rể */
+  /* Hộp mừng cưới start */
+  .wedding-box .qr-box {
+    flex-wrap: wrap;
+  }
+  .wedding-box .qr-box .qr {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
+  /* Hộp mừng cưới end */
   /* Button-wedding */
   .section-12 .box-item-wedding {
     right: 20px;
@@ -1604,7 +1636,7 @@ body {
   /* end section 3 */
 
   /* section 7 - sự kiện cưới */
-  
+
   /* end section 7 */
 
   /* lời ngỏ */
