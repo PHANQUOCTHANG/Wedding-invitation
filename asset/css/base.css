@@ -57,19 +57,50 @@ body {
   background-color: #000;
   opacity: 0.5;
 }
+.remindScroll {
+  position: fixed;
+  /* display: none; */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3499;
+  width: 100%;
+  max-width: 575px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: white;
+}
+.remindScroll .remind-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.remindScroll .remind-box h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #df4758;
+  animation: shake 1s infinite;
+}
+.remindScroll .remind-box .remind-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  background-color: #df4758;
+  padding: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  animation: fall 3s infinite;
+}
 .error-message {
   color: red;
   font-size: 12px;
+  margin-bottom: 10px;
   margin-top: 5px;
   display: none; /* Ẩn lỗi ban đầu */
 }
-
-
-
-
-
-
-
-
-
-

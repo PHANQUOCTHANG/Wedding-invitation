@@ -99,7 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // navbar
-
+var remindBox = document.querySelector(".remindScroll");
+window.onload = function () {
+  remindBox.classList.remove("hide");
+};
 const navbar = document.querySelector(".header");
 const pivot = document.querySelector("#pivot-nav");
 const pivotPotision = pivot.offsetTop;
@@ -170,6 +173,8 @@ const s10_items = document.querySelectorAll(".wedding-box .qr-box .qr");
 const s11_title = document.querySelector(".section-11 .wrap .inner-title");
 const s11_desc = document.querySelector(".section-11 .wrap .inner-desc");
 window.onscroll = () => {
+  remindBox.classList.add("hide");
+
   if (window.pageYOffset >= pivotPotision) {
     navbar.classList.add("sticky-nav");
     navbar.classList.remove("hide");
@@ -620,7 +625,6 @@ function validateNameLength(input, errorElement, errorMessage) {
   }
 }
 // Kiểm tra từng input khi blur
-console.log(1);
 document.getElementById("nameInput").addEventListener("blur", function () {
   if (
     validateInput(

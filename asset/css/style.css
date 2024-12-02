@@ -1310,18 +1310,18 @@ div.selected {
   padding: 16px 24px;
   overflow: auto;
 }
-.section-11 .wrap .show-comment .box-comment{
+.section-11 .wrap .show-comment .box-comment {
   position: relative;
   padding: 20px 0;
 }
-.section-11 .wrap .show-comment .box-comment:last-child{
+.section-11 .wrap .show-comment .box-comment:last-child {
   padding-bottom: 0;
 }
-.section-11 .wrap .show-comment .box-comment:last-child::before{
+.section-11 .wrap .show-comment .box-comment:last-child::before {
   display: none;
 }
-.section-11 .wrap .show-comment .box-comment::before{
-  content: '';
+.section-11 .wrap .show-comment .box-comment::before {
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
@@ -1329,7 +1329,6 @@ div.selected {
   background-color: gray;
   left: 0;
   bottom: 0;
-
 }
 .section-11 .wrap .show-comment .box-comment .title {
   font-size: 24px;
@@ -1393,7 +1392,7 @@ body {
   position: fixed;
   left: 50px;
   bottom: 70px;
-  z-index: 5000;
+  z-index: 2000;
 }
 
 .section-12 .open-volum {
@@ -1527,6 +1526,8 @@ body {
 }
 /* End Các nút icon wedding . */
 
+/* image-gallery end*/
+
 /* Hiệu ứng rung  */
 /* Keyframes cho hiệu ứng rung */
 @keyframes shake {
@@ -1571,7 +1572,7 @@ body {
   border-right: 1px solid gray;
   opacity: 0.8;
   pointer-events: none;
-  z-index: 4000;
+  z-index: 3000;
   animation: fall linear;
 }
 
@@ -1692,7 +1693,7 @@ body {
     position: fixed;
     left: 20px;
     bottom: 30px;
-    z-index: 5000;
+    z-index: 3200;
   }
 
   .section-12 .text-volum {

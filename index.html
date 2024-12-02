@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="asset/css/reset.css" />
     <link rel="stylesheet" href="asset/css/base.css" />
     <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/css/album.css" />
     <title>Document</title>
   </head>
   <body>
@@ -54,6 +55,14 @@
       </div>
     </div>
     <div class="background hide" id="bgr"></div>
+    <div class="remindScroll hide">
+      <div class="remind-box">
+        <h1>Kéo xuống để xem thêm</h1>
+        <div class="remind-icon">
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </div>
+    </div>
     <div class="payment hide" id="pay">
       <div class="wedding-box">
         <div class="container">
@@ -197,35 +206,314 @@
         <div class="album-img">
           <div class="col">
             <div class="img">
-              <img src="#" alt="" id="img-3-1" />
+              <img
+                src="asset/img/ab-1.png"
+                alt=""
+                id="img-3-1"
+                onclick="openModal();onAutoPlay();currentSlide(1);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-2" />
+              <img
+                src="asset/img/ab-2.png"
+                alt=""
+                id="img-3-2"
+                onclick="openModal();onAutoPlay();currentSlide(2);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-3" />
+              <img
+                src="asset/img/ab-3.png"
+                alt=""
+                id="img-3-3"
+                onclick="openModal();onAutoPlay();currentSlide(3);"
+                class="hover-shadow"
+              />
             </div>
           </div>
           <div class="col">
             <div class="img">
-              <img src="#" alt="" id="img-3-4" />
+              <img
+                src="asset/img/ab-4.png"
+                alt=""
+                id="img-3-4"
+                onclick="openModal();onAutoPlay();currentSlide(4);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-5" />
+              <img
+                src="asset/img/ab-5.png"
+                alt=""
+                id="img-3-5"
+                onclick="openModal();onAutoPlay();currentSlide(5);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-6" />
+              <img
+                src="asset/img/ab-6.png"
+                alt=""
+                id="img-3-6"
+                onclick="openModal();onAutoPlay();currentSlide(6);"
+                class="hover-shadow"
+              />
             </div>
           </div>
         </div>
         <div class="see-all-album">
-          <p><a href="">Tất cả hình ảnh</a></p>
+          <p>
+            <a
+              onclick="openModal();onAutoPlay();currentSlide(1);"
+              class="hover-shadow"
+              href="#"
+              >Tất cả hình ảnh</a
+            >
+          </p>
         </div>
       </div>
     </div>
     <!-- End album hình cưới -->
     <!-- section-3 end  -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- Progress bar -->
+        <div class="progress-bar-container">
+          <div class="hide" id="progress-bar"></div>
+        </div>
+        <div class="top-nav">
+          <div class="numbertext" id="number-page">1 / 6</div>
+          <div class="suport-nav">
+            <div class="nav-icon copy-img">
+              <i class="fa-regular fa-copy"></i>
+            </div>
+            <div class="nav-icon zoom-out">
+              <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </div>
+            <div class="nav-icon zoom-in">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+            <div class="nav-icon auto-play" onclick="changePlayStatus()">
+              <i
+                class="fa-regular fa-circle-play play_icon"
+                style="display: none"
+              ></i>
+              <i class="fa-regular fa-circle-pause pause_icon"></i>
+            </div>
+            <div class="nav-icon close-btn" onclick="closeModal()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="slide-block">
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-1.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
 
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-2.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-3.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-4.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-5.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-6.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-7.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-8.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-9.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-10.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="asset/img/ab-11.png" style="width: 100%" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="offAutoPlay();plusSlides(-1)"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+        <a class="next" onclick="offAutoPlay();plusSlides(1)"
+          ><i class="fa-solid fa-arrow-right"></i
+        ></a>
+
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail image controls -->
+        <div class="wrap-thumbnail flyFromBottom">
+          <div class="Thumbnail">
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-1.png"
+                onclick="offAutoPlay();currentSlide(1);"
+                alt="Nature"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-2.png"
+                onclick="offAutoPlay();currentSlide(2)"
+                alt="Snow"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-3.png"
+                onclick="offAutoPlay();currentSlide(3)"
+                alt="Mountains"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-4.png"
+                onclick="offAutoPlay();currentSlide(4)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-5.png"
+                onclick="offAutoPlay();currentSlide(5)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-6.png"
+                onclick="offAutoPlay();currentSlide(6)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-7.png"
+                onclick="offAutoPlay();currentSlide(7)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-8.png"
+                onclick="offAutoPlay();currentSlide(8)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-9.png"
+                onclick="offAutoPlay();currentSlide(9)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-10.png"
+                onclick="offAutoPlay();currentSlide(10)"
+                alt="Lights"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="asset/img/ab-11.png"
+                onclick="offAutoPlay();currentSlide(11)"
+                alt="Lights"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="turnOffThumbnail">
+          <i class="fa-solid fa-table-cells"></i>
+        </div>
+      </div>
+    </div>
     <!-- section-4 start  -->
     <div class="section-four" id="link4">
       <div class="container">
@@ -789,5 +1077,6 @@
     <!-- //Snow-fall -->
     <div id="snowfall-container"></div>
     <script type="module" src="asset/Javascript/main.js"></script>
+    <script src="asset/Javascript/album.js"></script>
   </body>
 </html>
