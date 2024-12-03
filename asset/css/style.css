@@ -219,6 +219,30 @@
 .section-1 .wrap .wedding-nav .wedding-box:hover {
   background-color: var(--color-two);
 }
+@media (max-width: 510px) {
+  .section-1 .wrap .wedding-nav {
+    flex-wrap: wrap;
+  }
+  .section-1 .wrap .wedding-nav .wedding-box {
+    width: 100%;
+  }
+}
+@media (max-width: 450px) {
+  .section-1 .wrap .inner-img .wedding-title {
+    bottom: -30px;
+  }
+  .section-1 .wrap .inner-img .wedding-desc {
+    top: 70px;
+  }
+}
+@media (max-width: 375px) {
+  .section-1 .wrap .inner-img .wedding-title {
+    bottom: 0px;
+  }
+  .section-1 .wrap .inner-img .wedding-desc {
+    top: 50px;
+  }
+}
 /* section 1 end  */
 
 /* *{
@@ -309,6 +333,8 @@
   margin: 0 16px 32px;
 }
 .album .album-img {
+  margin-left: 16px;
+  margin-right: 16px;
   display: flex;
   justify-content: center;
   gap: 4px;
@@ -408,7 +434,7 @@
   background-color: #f2f2f2;
   border-radius: 12px;
   display: flex;
-  gap: 32px;
+  gap: 24px;
   height: 180px;
   opacity: 0;
   transform: rotateX(-180deg);
@@ -532,6 +558,13 @@
   font-weight: 500;
   margin: 48px 0;
 }
+.wedding-box .wedding-box-title-extra h2 {
+  font-family: var(--font-one--);
+  font-size: 48px;
+  font-weight: 500;
+  margin: 48px 0;
+  text-align: center;
+}
 .wedding-box .qr-box {
   margin: 0 16px 32px;
 }
@@ -545,6 +578,12 @@
   font-family: var(--font-two--);
   font-size: 20px;
   margin: 0 16px 32px;
+}
+.wedding-box .wedding-box-desc-extra p {
+  font-family: var(--font-two--);
+  font-size: 20px;
+  margin: 0 16px 32px;
+  text-align: center;
 }
 .wedding-box .qr-box {
   display: flex;
@@ -568,6 +607,9 @@
 .moveFromRight {
   opacity: 1 !important;
   transform: translateX(0px) !important;
+}
+.wedding-box .qr:hover {
+  box-shadow: 1px 1px 18px #888888;
 }
 .wedding-box .qr .qr-img img {
   width: 75%;
@@ -657,7 +699,7 @@ div.selected {
   content: " ";
   background-color: #474747;
   height: 1px;
-  width: 420px;
+  width: 100%;
   display: inline-block;
   /* width: 420px; */
 }
@@ -665,7 +707,7 @@ div.selected {
   content: " ";
   background-color: #474747;
   height: 1px;
-  width: 420px;
+  width: 100%;
   margin-top: 30px;
   display: inline-block;
   /* width: 420px; */
@@ -708,6 +750,16 @@ div.selected {
 .inner-countdown.moveFromRight {
   opacity: 1;
   transform: translateX(0);
+}
+@media (max-width: 475px) {
+  .section-four .container .inner-wrap {
+    padding: 48px 20px;
+  }
+}
+@media (max-width: 325px) {
+  .section-four #inner-calendar-body td {
+    padding: 5px;
+  }
 }
 /* end section-4 */
 
@@ -1009,7 +1061,7 @@ div.selected {
 }
 .section-bride-groom .inner-wrap {
   background-color: #f9f9f9;
-  padding: 48px 0;
+  padding: 48px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1023,15 +1075,24 @@ div.selected {
   opacity: 0;
   transform: translateY(100px);
 }
+.section-bride-groom .inner-wrap .inner-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .section-bride-groom .inner-wrap .inner-box .inner-image {
   margin-top: 30px;
   width: 350px;
   height: 350px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 16px;
   opacity: 0;
   transform: rotateY(180deg);
+}
+@media (max-width: 375px) {
+  .section-bride-groom .inner-wrap .inner-box .inner-image {
+    width: 300px;
+    height: 300px;
+  }
 }
 .section-bride-groom .inner-wrap .inner-box .inner-image img {
   width: 100%;
@@ -1152,26 +1213,40 @@ div.selected {
 }
 .section-11 .wrap .inner-form input,
 .section-11 .wrap .inner-form textarea {
-  border: none;
-  outline: none;
   padding: 10px;
   height: 100%;
   width: 100%;
+  border: 1px solid #ddd;
+  transition: 0.1s;
+}
+.section-11 .wrap .inner-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.section-11 .wrap .inner-form input {
+  border-radius: 7px;
+  height: 40px;
 }
 .section-11 .wrap .inner-form .information {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
+.section-11 .wrap .inner-form .error-message {
+  font-size: 15px;
+}
 .section-11 .wrap .inner-form .information > div {
-  width: calc(50% - 10px);
   border-radius: 7px;
+  transition: 0.1s;
+  width: calc(50% - 10px);
+  border: none;
+  outline: none;
   overflow: hidden;
-  height: 40px;
+  /* height: 40px; */
 }
-.section-11 .wrap .inner-form .information > div:focus-within {
-  border: 3px solid lightskyblue;
-}
+
 .section-11 .wrap .inner-form .send-greet {
   display: block;
   width: 100%;
@@ -1195,6 +1270,9 @@ div.selected {
   resize: none;
   padding: 6px 12px;
   height: 70px;
+  border: none;
+  outline: none;
+  background-color: white !important;
 }
 .section-11 .wrap .inner-form .send-greet .add-greet {
   padding: 10px;
@@ -1230,6 +1308,28 @@ div.selected {
   margin-top: 15px;
   text-align: left;
   padding: 16px 24px;
+  overflow: auto;
+}
+.section-11 .wrap .show-comment .box-comment{
+  position: relative;
+  padding: 20px 0;
+}
+.section-11 .wrap .show-comment .box-comment:last-child{
+  padding-bottom: 0;
+}
+.section-11 .wrap .show-comment .box-comment:last-child::before{
+  display: none;
+}
+.section-11 .wrap .show-comment .box-comment::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  left: 0;
+  bottom: 0;
+
 }
 .section-11 .wrap .show-comment .box-comment .title {
   font-size: 24px;
@@ -1298,10 +1398,14 @@ body {
 
 .section-12 .open-volum {
   display: none;
+  border-radius: 50%;
+  animation: border-pulse 1s infinite;
 }
 
 .section-12 .close-volum {
   display: none;
+  border-radius: 50%;
+  animation: border-pulse 1s infinite;
 }
 
 .section-12 .button-open {
@@ -1309,6 +1413,13 @@ body {
   position: fixed;
   right: 55px;
   bottom: 70px;
+  border-radius: 50%;
+  animation: border-pulse 1s infinite;
+}
+
+.section-12 .button-close {
+  border-radius: 50%;
+  animation: border-pulse 1s infinite;
 }
 
 .section-12 .box-button-wedding {
@@ -1389,7 +1500,42 @@ body {
   z-index: 2000;
   padding-left: 50px;
 }
+/* extra div  */
+.payment {
+  position: fixed;
+  z-index: 1000;
+  /* max-width: 576px; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  padding: 40px 20px;
+}
+.payment .wedding-box {
+  z-index: 1001;
 
+  position: relative;
+  height: 100%;
+}
+.payment .wedding-box .container {
+  background-color: white;
+  max-width: 700px;
+  position: relative;
+}
+.payment .wedding-box .wrap-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #df4758;
+  cursor: pointer;
+}
 /* End Các nút icon wedding . */
 
 /* Hiệu ứng rung  */
@@ -1449,8 +1595,24 @@ body {
   }
 }
 
+/* animaion viền chuyển động bóng mờ bên ngoài . */
+
+@keyframes border-pulse {
+  0% {
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.3); /* Viền sáng hơn */
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5);
+  }
+}
+
+
+
 /* responsive  */
-@media (max-width: 414px) {
+@media (max-width: 475px) {
   /*  video cưới */
   .section-2-main .iframe iframe {
     margin-top: 40px;
@@ -1466,9 +1628,40 @@ body {
     font-size: 15px;
   }
 
-   /* end video cưới */
+  /* end video cưới */
 
-   /* lời ngỏ */
+  /* section 3 - album cưới */
+  .album h2 {
+    font-size: 44.8px;
+  }
+  .album p {
+    font-size: 17.6px;
+  }
+  /* end section 3 */
+
+  /* section 7 - sự kiện cưới */
+  .wedding-event .inner-wedding .event {
+    flex-direction: column;
+  }
+  .wedding-event .container .inner-wedding {
+    padding: 20px;
+  }
+  .wedding-event .container .inner-wedding .event {
+    margin: 0;
+    height: 500px;
+    width: 100%;
+  }
+  .wedding-event .inner-wedding .event-img {
+    width: 100%;
+    height: 250px;
+  }
+  .wedding-event .inner-wedding .event .event-desc {
+    width: 80%;
+    align-self: center;
+  }
+  /* end section 7 */
+
+  /* lời ngỏ */
   .section-6-main p {
     font-size: 16px;
   }
@@ -1501,7 +1694,16 @@ body {
     height: 260px;
   }
   /* end Phù dâu & Phù rể */
+  /* Hộp mừng cưới start */
+  .wedding-box .qr-box {
+    flex-wrap: wrap;
+  }
+  .wedding-box .qr-box .qr {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
+  /* Hộp mừng cưới end */
   /* Button-wedding */
   .section-12 .box-item-wedding {
     right: 20px;
@@ -1527,7 +1729,7 @@ body {
   /* end Button-wedding */
 }
 
-@media (max-width:320px) {
+@media (max-width: 320px) {
   /*  video cưới */
   .section-2-main .iframe iframe {
     width: 100%;
@@ -1536,10 +1738,23 @@ body {
   .section-2-main p:first-child {
     font-size: 40px;
   }
-   /* end video cưới */
+  /* end video cưới */
 
-   /* lời ngỏ */
-   .section-6-main p {
+  /* section 3 - album cưới */
+  .album h2 {
+    font-size: 40px;
+  }
+  .album p {
+    font-size: 17.6px;
+  }
+  /* end section 3 */
+
+  /* section 7 - sự kiện cưới */
+
+  /* end section 7 */
+
+  /* lời ngỏ */
+  .section-6-main p {
     padding-left: 20px;
     padding-right: 20px;
   }

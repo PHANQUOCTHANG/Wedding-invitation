@@ -36,7 +36,7 @@ body {
   /* height: 100vh; */
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 .sticky-nav {
   top: 0;
@@ -57,3 +57,19 @@ body {
   background-color: #000;
   opacity: 0.5;
 }
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none; /* Ẩn lỗi ban đầu */
+}
+
+
+
+
+
+
+
+
+
+
