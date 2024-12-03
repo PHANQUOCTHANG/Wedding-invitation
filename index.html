@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="asset/css/reset.css" />
     <link rel="stylesheet" href="asset/css/base.css" />
     <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/css/album.css" />
     <title>Document</title>
   </head>
   <body>
@@ -54,6 +55,14 @@
       </div>
     </div>
     <div class="background hide" id="bgr"></div>
+    <div class="remindScroll hide">
+      <div class="remind-box">
+        <h1>Kéo xuống để xem thêm</h1>
+        <div class="remind-icon">
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </div>
+    </div>
     <div class="payment hide" id="pay">
       <div class="wedding-box">
         <div class="container">
@@ -100,7 +109,7 @@
       <div class="container">
         <div class="main-nav">
           <div class="wedding-name">
-            <h3>V&H</h3>
+            <h3>K &A</h3>
           </div>
           <div id="menu-btn" class="wedding-selection">
             <i class="fa-solid fa-bars"></i>
@@ -117,20 +126,20 @@
           <div class="inner-title">
             <p>Chúng tôi</p>
             <div class="time-wedding">
-              <p class="we">04</p>
-              <p>04</p>
+              <p class="we">19</p>
+              <p>01</p>
             </div>
             <p>Sắp kết hôn</p>
           </div>
           <div class="inner-img">
             <div class="main-img">
-              <img src="asset/img/wedding-img-1.png" alt="" />
+              <img src="#" alt="" id="img-1-1" />
             </div>
             <div class="wedding-title">
               <img src="asset/img/wedding-title.png" alt="" />
             </div>
             <div class="wedding-desc">
-              Kiến Văn <small>&amp;</small> Việt Hoài
+              Quốc Khánh <small>&amp;</small> Lan Anh
             </div>
           </div>
           <div class="wedding-nav" id="pivot-nav">
@@ -197,35 +206,325 @@
         <div class="album-img">
           <div class="col">
             <div class="img">
-              <img src="#" alt="" id="img-3-1" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-1"
+                onclick="openModal();onAutoPlay();currentSlide(1);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-2" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-2"
+                onclick="openModal();onAutoPlay();currentSlide(2);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-3" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-3"
+                onclick="openModal();onAutoPlay();currentSlide(3);"
+                class="hover-shadow"
+              />
             </div>
           </div>
           <div class="col">
             <div class="img">
-              <img src="#" alt="" id="img-3-4" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-4"
+                onclick="openModal();onAutoPlay();currentSlide(4);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-5" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-5"
+                onclick="openModal();onAutoPlay();currentSlide(5);"
+                class="hover-shadow"
+              />
             </div>
             <div class="img">
-              <img src="#" alt="" id="img-3-6" />
+              <img
+                src="#"
+                alt=""
+                id="img-3-6"
+                onclick="openModal();onAutoPlay();currentSlide(6);"
+                class="hover-shadow"
+              />
             </div>
           </div>
         </div>
         <div class="see-all-album">
-          <p><a href="">Tất cả hình ảnh</a></p>
+          <p>
+            <a
+              onclick="openModal();onAutoPlay();currentSlide(1);"
+              class="hover-shadow"
+              href="#"
+              >Tất cả hình ảnh</a
+            >
+          </p>
         </div>
       </div>
     </div>
     <!-- End album hình cưới -->
     <!-- section-3 end  -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- Progress bar -->
+        <div class="progress-bar-container">
+          <div class="hide" id="progress-bar"></div>
+        </div>
+        <div class="top-nav">
+          <div class="numbertext" id="number-page">1 / 6</div>
+          <div class="suport-nav">
+            <div class="nav-icon copy-img">
+              <i class="fa-regular fa-copy"></i>
+            </div>
+            <div class="nav-icon zoom-out">
+              <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </div>
+            <div class="nav-icon zoom-in">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+            <div class="nav-icon auto-play" onclick="changePlayStatus()">
+              <i
+                class="fa-regular fa-circle-play play_icon"
+                style="display: none"
+              ></i>
+              <i class="fa-regular fa-circle-pause pause_icon"></i>
+            </div>
+            <div class="nav-icon close-btn" onclick="closeModal()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="slide-block">
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-1" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
 
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-2" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-3" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-4" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-5" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-6" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-7" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-8" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-9" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-10" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-11" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="offAutoPlay();plusSlides(-1)"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+        <a class="next" onclick="offAutoPlay();plusSlides(1)"
+          ><i class="fa-solid fa-arrow-right"></i
+        ></a>
+
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail image controls -->
+        <div class="wrap-thumbnail flyFromBottom">
+          <div class="Thumbnail">
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(1);"
+                alt="Nature"
+                id="slide-3-1"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(2)"
+                alt="Snow"
+                id="slide-3-2"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(3)"
+                alt="Mountains"
+                id="slide-3-3"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(4)"
+                alt="Lights"
+                id="slide-3-4"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(5)"
+                alt="Lights"
+                id="slide-3-5"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(6)"
+                alt="Lights"
+                id="slide-3-6"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(7)"
+                alt="Lights"
+                id="slide-3-7"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(8)"
+                alt="Lights"
+                id="slide-3-8"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(9)"
+                alt="Lights"
+                id="slide-3-9"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(10)"
+                alt="Lights"
+                id="slide-3-10"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(11)"
+                alt="Lights"
+                id="slide-3-11"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="turnOffThumbnail">
+          <i class="fa-solid fa-table-cells"></i>
+        </div>
+      </div>
+    </div>
     <!-- section-4 start  -->
     <div class="section-four" id="link4">
       <div class="container">
@@ -381,10 +680,10 @@
             <img src="#" alt="" id="img-6-1" />
           </div>
           <p class="text-6 item" style="padding-top: 40px">
-            *Groom/ <strong>Q</strong>
+            *Groom/ <span>Quốc Khánh </span>
           </p>
           <p style="padding-bottom: 90px" class="text-6 item">
-            *Bride/ <strong>P</strong>
+            *Bride/ <span>Lan Anh </span>
           </p>
         </div>
       </div>
@@ -416,14 +715,20 @@
             </div>
             <div class="event-desc">
               <h3>LỄ CƯỚI NHÀ NỮ</h3>
-              <p>07:30 10/02/2023</p>
+              <p>11:00 | 10. 01. 2025</p>
               <p>
-                TƯ GIA NHÀ NỮ - 123 Nguyễn Tất Thành, Hòa Phướng, Hải Châu, Đà
-                Nẵng
+                TƯ GIA NHÀ NỮ - Xóm 3, Thôn Anna, xã Dray Sáp, Krông Ana, Đắk
+                Lắk
               </p>
               <div class="event-info">
                 <p><a href="">Thêm vào lịch</a></p>
-                <p><a href="">Xem bản đồ</a></p>
+                <p>
+                  <a
+                    href="https://www.google.com/maps/place/12%C2%B033'27.7%22N+107%C2%B057'50.0%22E/@12.557695,107.963887,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.557695!4d107.963887?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -438,11 +743,20 @@
             </div>
             <div class="event-desc">
               <h3>TIỆC CƯỚI NHÀ NỮ</h3>
-              <p>11:30 10/02/2023</p>
-              <p>Nhà hàng tiệc cưới Hoa Cau</p>
+              <p>11:00 | 10. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NỮ - Xóm 3, Thôn Anna, xã Dray Sáp, Krông Ana, Đắk
+                Lắk
+              </p>
               <div class="event-info">
                 <p><a href="">Thêm vào lịch</a></p>
-                <p><a href="">Xem bản đồ</a></p>
+                <p>
+                  <a
+                    href="https://www.google.com/maps/place/12%C2%B033'27.7%22N+107%C2%B057'50.0%22E/@12.557695,107.963887,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.557695!4d107.963887?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -457,11 +771,19 @@
             </div>
             <div class="event-desc">
               <h3>LỄ CƯỚI NHÀ NAM</h3>
-              <p>09:00 12/09/2023</p>
-              <p>Tư gia nhà nam</p>
+              <p>11:00 | 19. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NAM - Tổ 1, Ấp Tân Điền, xã Lý Nhơn, cần Giờ, TP. HCM
+              </p>
               <div class="event-info">
                 <p><a href="">Thêm vào lịch</a></p>
-                <p><a href="">Xem bản đồ</a></p>
+                <p>
+                  <a
+                    href="https://www.google.com/maps?q=FQ8G+6XJ+T%C3%B4m+kh%C3%B4+Thu%E1%BB%B3+Trang,+D%C6%B0%C6%A1ng+V%C4%83n+H%E1%BA%A1nh,+L%C3%BD+Nh%C6%A1n,+C%E1%BA%A7n+Gi%E1%BB%9D,+H%E1%BB%93+Ch%C3%AD+Minh&ftid=0x317539b1ba28e235:0xb145c281a345c200&entry=gps&lucs=,94203325,47075489,94216425,94216401,94249918,94244542,94242520,94224825,94227247,94227248,94247554,47071704,47069508,94218641,94233073,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTQxLjAuOTE2NjAYACDXggMqqwEsOTQyMDMzMjUsNDcwNzU0ODksOTQyMTY0MjUsOTQyMTY0MDEsOTQyNDk5MTgsOTQyNDQ1NDIsOTQyNDI1MjAsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyNDc1NTQsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMzMwNzMsOTQyMDMwMTksNDcwODQzMDQsOTQyMDg0NTgsOTQyMDg0NDdCAlZO&g_st=iz"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -476,11 +798,19 @@
             </div>
             <div class="event-desc">
               <h3>TIỆC CƯỚI NHÀ NAM</h3>
-              <p>12:00 12/09/2023</p>
-              <p>Nhà hàng tiệc cưới For You</p>
+              <p>11:00 | 19. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NAM - Tổ 1, Ấp Tân Điền, xã Lý Nhơn, cần Giờ, TP. HCM
+              </p>
               <div class="event-info">
                 <p><a href="">Thêm vào lịch</a></p>
-                <p><a href="">Xem bản đồ</a></p>
+                <p>
+                  <a
+                    href="https://www.google.com/maps?q=FQ8G+6XJ+T%C3%B4m+kh%C3%B4+Thu%E1%BB%B3+Trang,+D%C6%B0%C6%A1ng+V%C4%83n+H%E1%BA%A1nh,+L%C3%BD+Nh%C6%A1n,+C%E1%BA%A7n+Gi%E1%BB%9D,+H%E1%BB%93+Ch%C3%AD+Minh&ftid=0x317539b1ba28e235:0xb145c281a345c200&entry=gps&lucs=,94203325,47075489,94216425,94216401,94249918,94244542,94242520,94224825,94227247,94227248,94247554,47071704,47069508,94218641,94233073,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTQxLjAuOTE2NjAYACDXggMqqwEsOTQyMDMzMjUsNDcwNzU0ODksOTQyMTY0MjUsOTQyMTY0MDEsOTQyNDk5MTgsOTQyNDQ1NDIsOTQyNDI1MjAsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyNDc1NTQsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMzMwNzMsOTQyMDMwMTksNDcwODQzMDQsOTQyMDg0NTgsOTQyMDg0NDdCAlZO&g_st=iz"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -500,32 +830,22 @@
                 <img src="asset/img/Groom.png" alt="" />
               </div>
               <div class="inner-parent">
-                <span>con ông: ??</span>
-                <span>con bà: ??</span>
+                <span>Con ông: <strong>Trần Công Dẹp</strong></span>
+                <span>Con bà: <strong>Nguyễn Thị Thùy Trang</strong></span>
               </div>
-              <div class="inner-content">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                  repellat dolores sint officia eveniet omnis debitis saepe
-                  asperiores! Iure sed alias quasi aperiam dolore harum vitae
-                  magni. Reprehenderit, at cupiditate. Delectus temporibus
-                  reprehenderit quam natus eius. Saepe soluta cumque rerum quod
-                  minima et modi eius maxime doloremque nemo, repellat, iusto
-                  quisquam sint eveniet reprehenderit optio odit dignissimos
-                  sequi? Eligendi, ab! Aspernatur aliquam enim deleniti officiis
-                  libero eaque laudantium ipsam sapiente, consequatur possimus
-                  quo reprehenderit, aperiam suscipit debitis dolore itaque,
-                  asperiores nam. Amet delectus quidem incidunt odit corporis.
-                  Doloribus, accusantium cum?
-                </p>
-              </div>
-              <div class="inner-button">Xem thêm</div>
+
               <div class="inner-contact">
                 <span>Quốc Khánh / </span>
                 <ul>
-                  <li><i class="fa-brands fa-facebook"></i></li>
-                  <li><i class="fa-brands fa-twitter"></i></li>
-                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -534,32 +854,22 @@
                 <img src="asset/img/Pride.png" alt="" />
               </div>
               <div class="inner-parent">
-                <span>con ông: ??</span>
-                <span>con bà: ??</span>
+                <span>Con ông: <strong>Vũ Công Đồng</strong></span>
+                <span>Con bà: <strong>Uông Thị Tuất</strong></span>
               </div>
-              <div class="inner-content">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
-                  repellat dolores sint officia eveniet omnis debitis saepe
-                  asperiores! Iure sed alias quasi aperiam dolore harum vitae
-                  magni. Reprehenderit, at cupiditate. Delectus temporibus
-                  reprehenderit quam natus eius. Saepe soluta cumque rerum quod
-                  minima et modi eius maxime doloremque nemo, repellat, iusto
-                  quisquam sint eveniet reprehenderit optio odit dignissimos
-                  sequi? Eligendi, ab! Aspernatur aliquam enim deleniti officiis
-                  libero eaque laudantium ipsam sapiente, consequatur possimus
-                  quo reprehenderit, aperiam suscipit debitis dolore itaque,
-                  asperiores nam. Amet delectus quidem incidunt odit corporis.
-                  Doloribus, accusantium cum?
-                </p>
-              </div>
-              <div class="inner-button">Xem thêm</div>
+
               <div class="inner-contact">
-                <span>Quốc Khánh / </span>
+                <span>Lan Anh / </span>
                 <ul>
-                  <li><i class="fa-brands fa-facebook"></i></li>
-                  <li><i class="fa-brands fa-twitter"></i></li>
-                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li>
+                    <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -604,7 +914,7 @@
               </p>
             </div>
             <div class="box-img" style="margin-top: 70px">
-              <img src="#" alt="" id="img-9-4"/>
+              <img src="#" alt="" id="img-9-4" />
               <p class="header-text">Hoàng Gia Bảo</p>
               <p class="text">
                 Hòa đồng, xông xáo, nhiệt tình và có trách nhiệm trong công
@@ -733,7 +1043,7 @@
       <div class="container">
         <div class="inner-wrap">
           <h3>Thank you!</h3>
-          <h5>-- Quốc Khánh & Quốc Khánh --</h5>
+          <h5>-- Quốc Khánh & Lan Anh --</h5>
         </div>
       </div>
     </div>
@@ -749,7 +1059,9 @@
         </div>
         <div class="box-button-wedding">
           <div class="button-wedding">
-            <a href="XacNhan/xacnhan.html"><i class="fa-regular fa-calendar-check"></i></a>
+            <a href="XacNhan/xacnhan.html"
+              ><i class="fa-regular fa-calendar-check"></i
+            ></a>
           </div>
           <div class="text-wedding">Xác nhận tham dự</div>
         </div>
@@ -789,5 +1101,6 @@
     <!-- //Snow-fall -->
     <div id="snowfall-container"></div>
     <script type="module" src="asset/Javascript/main.js"></script>
+    <script src="asset/Javascript/album.js"></script>
   </body>
 </html>

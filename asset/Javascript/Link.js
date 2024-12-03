@@ -1,4 +1,8 @@
 export const Links = {
+    // Ảnh cưới (section-1).
+    img_1_1 : "asset/img/img-1-1.jpg" ,
+    // end section-1 .
+
     // album (section-3)
     img_3_1 : "asset/img/img-3-1.jpg",
     img_3_2 : "asset/img/img-3-2.jpg",
@@ -6,10 +10,16 @@ export const Links = {
     img_3_4 : "asset/img/img-3-4.jpg",
     img_3_5 : "asset/img/img-3-5.jpg",
     img_3_6 : "asset/img/img-3-6.jpg",
+    img_3_7 : "asset/img/img-3-7.jpg",
+    img_3_8 : "asset/img/img-3-8.jpg",
+    img_3_9 : "asset/img/img-3-9.jpg",
+    img_3_10 : "asset/img/img-3-10.jpg",
+    img_3_11 : "asset/img/img-3-11.jpg",
+
     // end section-3
     
     // lời ngỏ (section-6) .
-    img_6_1 : "asset/img/6-img-1.jpg" ,
+    img_6_1 : "asset/img/img-1-1.jpg" ,
     // end lời ngỏ .
 
     // section-7

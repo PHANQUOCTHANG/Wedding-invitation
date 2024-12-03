@@ -1,8 +1,23 @@
+const s0_title = document.querySelector(".section-1 .wrap .inner-title");
+const s0_img = document.querySelector(".section-1 .wrap .inner-img");
+const s0_Wedding = document.querySelector(
+  ".section-1 .wrap .inner-img .wedding-title"
+);
+const s0_Name = document.querySelector(
+  ".section-1 .wrap .inner-img .wedding-desc "
+);
+const body = document.querySelector("body");
+setTimeout(() => {
+  s0_img.classList.toggle("moveFromBottom");
+}, 500);
+setTimeout(() => {
+  s0_title.classList.toggle("moveFromBottom");
+}, 1000);
 document.addEventListener("DOMContentLoaded", () => {
   const today = new Date();
-  const currentMonth = today.getMonth();
-  const currentYear = today.getFullYear();
-  const currentDay = today.getDate();
+  const currentMonth = 1;
+  const currentYear = 2025;
+  const currentDay = 19;
   const monthNames = [
     "1",
     "2",
@@ -17,28 +32,33 @@ document.addEventListener("DOMContentLoaded", () => {
     "11",
     "12",
   ];
-  document.getElementById("month").textContent = monthNames[currentMonth];
+  document.getElementById("month").textContent = monthNames[currentMonth - 1];
   document.getElementById("year").textContent = currentYear;
 
   function generateCalendar(month, year) {
     const calendarBody = document.getElementById("inner-calendar-body");
     calendarBody.innerHTML = "";
 
+    // Set the target date to January 19, 2025
+    const targetDate = new Date(2025, 0, 19); // January is month 0
+    const currentDay = targetDate.getDate();
+    const today = targetDate; // Set today to the target date
+
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
     let date = 1;
     for (let i = 0; i < 6; i++) {
-      // Tối đa 6 hàng
+      // Maximum of 6 rows
       const row = document.createElement("tr");
 
       for (let j = 0; j < 7; j++) {
         const cell = document.createElement("td");
 
         if (i === 0 && j < (firstDay === 0 ? 6 : firstDay - 1)) {
-          cell.textContent = "";
+          cell.textContent = ""; // Empty cell before the first day of the month
         } else if (date > daysInMonth) {
-          cell.textContent = "";
+          cell.textContent = ""; // Empty cells after the last day of the month
         } else {
           if (
             date === currentDay &&
@@ -46,24 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
             year === today.getFullYear()
           ) {
             const hov = document.createElement("div");
-            hov.classList.add("selected");
+            hov.classList.add("selected"); // Highlight the current day
             hov.textContent = date;
             cell.appendChild(hov);
-          } else cell.textContent = date;
+          } else {
+            cell.textContent = date; // Fill in the day number
+          }
           date++;
         }
         row.appendChild(cell);
       }
       calendarBody.appendChild(row);
 
-      if (date > daysInMonth) break;
+      if (date > daysInMonth) break; // Stop if we exceed the number of days in the month
     }
   }
 
+  // Call the function for January 2025
+  // 0 for January, 2025 for the year
   function countdown(targetDate) {
     function updateCountdown() {
       const now = new Date();
-      const diff = now - targetDate;
+      // console.log(now);
+      const diff = targetDate - now;
 
       if (diff < 0) return; // Ngưng nếu đã qua ngày
 
@@ -91,22 +116,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Gọi hàm tạo lịch
-  generateCalendar(currentMonth, currentYear);
+  // generateCalendar(currentMonth, currentYear);
+  generateCalendar(0, 2025);
 
   // Gọi hàm đếm ngược (thay đổi targetDate thành ngày mong muốn)
-  const targetDate = new Date("2023-04-04T00:00:00");
+  const targetDate = new Date("2025-01-19T11:00:00");
   countdown(targetDate);
 });
 
 // navbar
-
 const navbar = document.querySelector(".header");
 const pivot = document.querySelector("#pivot-nav");
 const pivotPotision = pivot.offsetTop;
 
 // animation section-0
-const s0_title = document.querySelector(".section-1 .wrap .inner-title");
-const s0_img = document.querySelector(".section-1 .wrap .inner-img");
 
 // animation section-1
 const weddingBox = document.querySelectorAll(
@@ -170,6 +193,8 @@ const s10_items = document.querySelectorAll(".wedding-box .qr-box .qr");
 const s11_title = document.querySelector(".section-11 .wrap .inner-title");
 const s11_desc = document.querySelector(".section-11 .wrap .inner-desc");
 window.onscroll = () => {
+  remindBox.classList.add("hide");
+
   if (window.pageYOffset >= pivotPotision) {
     navbar.classList.add("sticky-nav");
     navbar.classList.remove("hide");
@@ -177,18 +202,18 @@ window.onscroll = () => {
     navbar.classList.remove("sticky-nav");
     navbar.classList.add("hide");
   }
-  //animate section-0
-  if (window.pageYOffset + window.innerHeight >= s0_title.offsetTop + 150) {
-    s0_title.classList.add("moveFromBottom");
+  // animate section-0
+  if (window.pageYOffset + window.innerHeight >= s0_Wedding.offsetTop + 300) {
+    s0_Wedding.classList.add("moveFromBottom");
   } else {
-    s0_title.classList.remove("moveFromBottom");
+    s0_Wedding.classList.remove("moveFromBottom");
   }
-  if (window.pageYOffset + window.innerHeight >= s0_img.offsetTop + 150) {
-    s0_img.classList.add("moveFromBottom");
+  if (window.pageYOffset + window.innerHeight >= s0_Name.offsetTop + 250) {
+    s0_Name.classList.add("moveFromBottom");
   } else {
-    s0_img.classList.remove("moveFromBottom");
+    s0_Name.classList.remove("moveFromBottom");
   }
-  //animate section-1
+  // animate section-1
   weddingBox.forEach((value, key, arr) => {
     if (key === 0) {
       if (window.pageYOffset + window.innerHeight >= value.offsetTop + 50) {
@@ -502,7 +527,7 @@ function showText() {
         buttonWeddings[i].classList.add("shake");
       }, 3000 * (i + 1));
       setTimeout(() => {
-        box.classList.remove("shake"); // Xóa class sau 0.5s
+        // box.classList.remove("shake"); // Xóa class sau 0.5s
       }, 3000 * (i + 1) + 500); // Thời gian phải khớp với animation trong CSS
       setTimeout(() => {
         textWeddings[i].style.opacity = "0";
@@ -563,6 +588,73 @@ setInterval(createSnowflake, 100); // Tạo mỗi 100ms
 
 import { Links } from "./Link.js";
 
+// Ảnh cưới (section-1) .
+const img_1_1 = document.querySelector("#img-1-1");
+img_1_1.src = Links.img_1_1;
+// end ảnh cưới .
+
+// album ảnh cưới (section-3) .
+const img_3_1 = document.querySelector("#img-3-1");
+img_3_1.src = Links.img_3_1;
+const img_3_2 = document.querySelector("#img-3-2");
+img_3_2.src = Links.img_3_2;
+const img_3_3 = document.querySelector("#img-3-3");
+img_3_3.src = Links.img_3_3;
+const img_3_4 = document.querySelector("#img-3-4");
+img_3_4.src = Links.img_3_4;
+const img_3_5 = document.querySelector("#img-3-5");
+img_3_5.src = Links.img_3_5;
+const img_3_6 = document.querySelector("#img-3-6");
+img_3_6.src = Links.img_3_6;
+
+const album_3_1 = document.querySelector("#album-3-1");
+album_3_1.src = Links.img_3_1;
+const album_3_2 = document.querySelector("#album-3-2");
+album_3_2.src = Links.img_3_2;
+const album_3_3 = document.querySelector("#album-3-3");
+album_3_3.src = Links.img_3_3;
+const album_3_4 = document.querySelector("#album-3-4");
+album_3_4.src = Links.img_3_4;
+const album_3_5 = document.querySelector("#album-3-5");
+album_3_5.src = Links.img_3_5;
+const album_3_6 = document.querySelector("#album-3-6");
+album_3_6.src = Links.img_3_6;
+const album_3_7 = document.querySelector("#album-3-7");
+album_3_7.src = Links.img_3_7;
+const album_3_8 = document.querySelector("#album-3-8");
+album_3_8.src = Links.img_3_8;
+const album_3_9 = document.querySelector("#album-3-9");
+album_3_9.src = Links.img_3_9;
+const album_3_10 = document.querySelector("#album-3-10");
+album_3_10.src = Links.img_3_10;
+const album_3_11 = document.querySelector("#album-3-11");
+album_3_11.src = Links.img_3_11;
+
+const slide_3_1 = document.querySelector("#slide-3-1");
+slide_3_1.src = Links.img_3_1;
+const slide_3_2 = document.querySelector("#slide-3-2");
+slide_3_2.src = Links.img_3_2;
+const slide_3_3 = document.querySelector("#slide-3-3");
+slide_3_3.src = Links.img_3_3;
+const slide_3_4 = document.querySelector("#slide-3-4");
+slide_3_4.src = Links.img_3_4;
+const slide_3_5 = document.querySelector("#slide-3-5");
+slide_3_5.src = Links.img_3_5;
+const slide_3_6 = document.querySelector("#slide-3-6");
+slide_3_6.src = Links.img_3_6;
+const slide_3_7 = document.querySelector("#slide-3-7");
+slide_3_7.src = Links.img_3_7;
+const slide_3_8 = document.querySelector("#slide-3-8");
+slide_3_8.src = Links.img_3_8;
+const slide_3_9 = document.querySelector("#slide-3-9");
+slide_3_9.src = Links.img_3_9;
+const slide_3_10 = document.querySelector("#slide-3-10");
+slide_3_10.src = Links.img_3_10;
+const slide_3_11 = document.querySelector("#slide-3-11");
+slide_3_11.src = Links.img_3_11;
+
+// end album ảnh cưới (sectiom-3) .
+
 // lời ngỏ (section-6) .
 const img_6_1 = document.querySelector("#img-6-1");
 img_6_1.src = Links.img_6_1;
@@ -577,20 +669,7 @@ const img_9_3 = document.querySelector("#img-9-3");
 img_9_3.src = Links.img_9_3;
 const img_9_4 = document.querySelector("#img-9-4");
 img_9_4.src = Links.img_9_4;
-// end phù dâu & phù rể .     
-
-const img_3_1 = document.querySelector("#img-3-1");
-img_3_1.src = Links.img_3_1;
-const img_3_2 = document.querySelector("#img-3-2");
-img_3_2.src = Links.img_3_2;
-const img_3_3 = document.querySelector("#img-3-3");
-img_3_3.src = Links.img_3_3;
-const img_3_4 = document.querySelector("#img-3-4");
-img_3_4.src = Links.img_3_4;
-const img_3_5 = document.querySelector("#img-3-5");
-img_3_5.src = Links.img_3_5;
-const img_3_6 = document.querySelector("#img-3-6");
-img_3_6.src = Links.img_3_6 ;
+// end phù dâu & phù rể .
 
 //greet
 function validateInput(input, errorElement, errorMessage) {
@@ -624,7 +703,6 @@ function validateNameLength(input, errorElement, errorMessage) {
   }
 }
 // Kiểm tra từng input khi blur
-console.log(1);
 document.getElementById("nameInput").addEventListener("blur", function () {
   if (
     validateInput(
