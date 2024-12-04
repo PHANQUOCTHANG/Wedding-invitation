@@ -1405,7 +1405,7 @@ body {
   position: fixed;
   left: 50px;
   bottom: 70px;
-  z-index: 5000;
+  z-index: 3200;
 }
 
 .section-12 .open-volum {

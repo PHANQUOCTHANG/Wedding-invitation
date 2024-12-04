@@ -50,7 +50,6 @@ var remindBox = document.querySelector(".remindScroll");
 let timeout2;
 function showRemind() {
   remindBox.classList.remove("hide");
-  console.log("oce");
 }
 function resetTimer() {
   // Xóa bộ đếm thời gian cũ
