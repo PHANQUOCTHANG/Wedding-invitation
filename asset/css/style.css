@@ -456,9 +456,6 @@
 .wedding-event .inner-wedding .event h3 {
   margin: 20px 0;
 }
-.wedding-event .inner-wedding .event:nth-child(1) {
-  height: 200px;
-}
 .wedding-event .inner-wedding .event-img {
   position: relative;
   width: 32%;
@@ -541,7 +538,7 @@
   padding: 8px;
   background-color: #636363;
   border-radius: 4px;
-  margin-top: 12px;
+  /* margin-top: 7px; */
 }
 .wedding-event .inner-wedding .event .event-info p a {
   text-decoration: none;
@@ -1639,7 +1636,10 @@ body {
   .section-2-main #text {
     font-size: 15px;
   }
-
+  .wedding-event .inner-wedding .event .event-desc {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
   /* end video cưới */
 
   /* section 3 - album cưới */
@@ -1670,6 +1670,13 @@ body {
   .wedding-event .inner-wedding .event .event-desc {
     width: 80%;
     align-self: center;
+    text-align: center;
+    height: 100%;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .wedding-event .inner-wedding .event .event-info p {
+    padding: 8px 20px;
   }
   /* end section 7 */
 
