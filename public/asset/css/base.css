@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Bonheur+Royale&display=swap");
+:root {
+  --font-one--: "Bonheur Royale", cursive;
+  --font-two--: "Bellota Text", sans-serif;
+  --color-one: #c6c6c6;
+  --color-two: #5c636a;
+  --color-three: #3d3d3d;
+  --color-btn: #636363;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+::after,
+::before {
+  box-sizing: border-box;
+}
+.container {
+  overflow: hidden;
+  background: #fff;
+  width: 100%;
+  max-width: 575px;
+  margin: 0 auto;
+}
+body {
+  font-family: var(--font-two--);
+  background: #ccc;
+  font-weight: 200 !important;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /* height: 100vh; */
+}
+.hide {
+  display: none !important;
+}
+.sticky-nav {
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+.show-menu {
+  right: 0 !important;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.5;
+}
+.remindScroll {
+  position: fixed;
+  /* display: none; */
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3499;
+  width: 100%;
+  max-width: 575px;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: white;
+}
+.remindScroll .remind-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.remindScroll .remind-box h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #df4758;
+  animation: shake 1s infinite;
+}
+.remindScroll .remind-box .remind-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  background-color: #df4758;
+  padding: 20px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  animation: fall 3s infinite;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  display: none; /* Ẩn lỗi ban đầu */
+}

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      property="og:image"
+      content="https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/logo_iwedding.png?alt=media&token=12b8f825-5a1f-4775-8af4-f197ebe61511"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="asset/css/reset.css" />
+    <link rel="stylesheet" href="asset/css/base.css" />
+    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/css/album.css" />
+    <link
+      rel="shortcut icon"
+      href="asset/img/logo_iwedding.png"
+      type="image/x-icon"
+    />
+    <title>Khánh & Anh</title>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.1.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.1.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <!-- <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- thêm sub header navbar  -->
+    <div class="sub-menu">
+      <div class="wrap">
+        <div id="close-btn">
+          <i id="cls-btn" class="fa-solid fa-xmark"></i>
+        </div>
+        <ul>
+          <li>
+            <a href="#link2"> Video Cưới </a>
+          </li>
+          <li>
+            <a href="#link3"> Album Hình Cưới </a>
+          </li>
+          <li>
+            <a href="#link5"> Chuyện Tình Yêu </a>
+          </li>
+          <li>
+            <a href="#link6"> Lời Ngỏ </a>
+          </li>
+          <li>
+            <a href="#link7"> Sự kiện Cưới </a>
+          </li>
+          <li>
+            <a href="#link8"> Cô Dâu & Chú Rể </a>
+          </li>
+          <li>
+            <a href="#link9"> Phù Dâu & Phù Rể </a>
+          </li>
+          <li>
+            <a href="#link11"> Sổ Lưu Bút </a>
+          </li>
+          <li>
+            <a href="#link10"> Mừng Cưới </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="background hide" id="bgr"></div>
+    <div class="remindScroll hide">
+      <div class="remind-box">
+        <h1>Kéo xuống để xem thêm</h1>
+        <div class="remind-icon">
+          <i class="fa-solid fa-angles-down"></i>
+        </div>
+      </div>
+    </div>
+    <div class="payment hide" id="pay">
+      <div class="wedding-box">
+        <div class="container">
+          <div class="wrap-icon"><i class="fa-solid fa-xmark"></i></div>
+          <div class="wedding-box-title-extra">
+            <h2>Hộp mừng cưới</h2>
+          </div>
+          <div class="wedding-box-desc-extra">
+            <p>
+              Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt
+              như đám cưới của chúng tôi.
+            </p>
+          </div>
+          <div class="qr-box">
+            <div class="qr">
+              <h3>ĐẾN CHÚ RỂ</h3>
+              <div class="qr-img">
+                <img src="./asset/img/QR.jpg" alt="" />
+              </div>
+              <p>Ngân hàng: VietinBank</p>
+              <p>Tên tài khoản: Trần Quốc Khánh</p>
+              <p>Số tài khoản: 104867404956</p>
+              <p>Chi nhánh: THU DUC - PGD METRO</p>
+            </div>
+            <div class="qr">
+              <h3>ĐẾN CÔ DÂU</h3>
+              <div class="qr-img">
+                <img src="./asset/img/QR.jpg" alt="" />
+              </div>
+              <p>Ngân hàng: VietinBank</p>
+              <p>Tên tài khoản: Trần Quốc Khánh</p>
+              <p>Số tài khoản: 104867404956</p>
+              <p>Chi nhánh: THU DUC - PGD METRO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- thêm sub header navbar  -->
+
+    <!-- thêm header navbar  -->
+
+    <header class="header hide">
+      <div class="container">
+        <div class="main-nav">
+          <div class="wedding-name">
+            <h3>K &A</h3>
+          </div>
+          <div id="menu-btn" class="wedding-selection">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- thêm header navbar  -->
+
+    <!-- section-1 start -->
+    <div class="section-1" id="link1">
+      <div class="container">
+        <div class="wrap">
+          <div class="inner-title">
+            <p>Chúng tôi</p>
+            <div class="time-wedding">
+              <p class="we">19</p>
+              <p>01</p>
+            </div>
+            <p>Sắp kết hôn</p>
+          </div>
+          <div class="inner-img">
+            <div class="main-img">
+              <img src="#" alt="" id="img-1-1" />
+            </div>
+            <div class="wedding-title">
+              <img src="asset/img/wedding-title.png" alt="" />
+            </div>
+            <div class="wedding-desc">
+              Quốc Khánh <small>&amp;</small> Lan Anh
+            </div>
+          </div>
+          <div class="wedding-nav" id="pivot-nav">
+            <div class="wedding-box">
+              <a href="#link11">
+                <i class="fa-regular fa-message"></i>
+                <span>Gửi lời chúc</span>
+              </a>
+            </div>
+            <div class="wedding-box">
+              <a href="https://forms.gle/xUEXYPVpCX7VPMxj9" target="_blank">
+                <i class="fa-solid fa-bus"></i>
+                <span>Đăng kí xe</span>
+              </a>
+            </div>
+            <div class="wedding-box pay-btn">
+              <a href="#">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <span>Mừng cưới</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section-1 end -->
+
+    <!-- section-2 start  -->
+    <!-- Video cưới -->
+    <div class="section-2" id="link2">
+      <div class="container">
+        <div class="section-2-main">
+          <p>Video Cưới</p>
+          <p id="text">Tình yêu không làm cho thế giới xoay tròn.</p>
+          <span class="iframe">
+            <iframe
+              src="https://www.youtube.com/embed/1JE24VcCZpM?si=Ja-8eOeuqepCBLmk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- End video cưới -->
+    <!-- section-2 end  -->
+
+    <!-- section-3 start  -->
+    <!-- Album hình cưới -->
+    <div class="album" id="link3">
+      <div class="container">
+        <div class="album-title">
+          <h2>Album Hình Cưới</h2>
+        </div>
+        <div class="album-desc">
+          <p>
+            Được ai đó yêu sâu sắc sẽ mang lại cho bạn sức mạnh, trong khi yêu
+            ai đó sâu sắc sẽ cho bạn dũng khí.
+          </p>
+        </div>
+        <div class="album-img">
+          <div class="col">
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-1"
+                onclick="openModal();onAutoPlay();currentSlide(1);"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-2"
+                onclick="openModal();onAutoPlay();currentSlide(2);"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-3"
+                onclick="openModal();onAutoPlay();currentSlide(3);"
+                class="hover-shadow"
+              />
+            </div>
+          </div>
+          <div class="col">
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-4"
+                onclick="openModal();onAutoPlay();currentSlide(4);"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-5"
+                onclick="openModal();onAutoPlay();currentSlide(5);"
+                class="hover-shadow"
+              />
+            </div>
+            <div class="img">
+              <img
+                src="#"
+                alt=""
+                id="img-3-6"
+                onclick="openModal();onAutoPlay();currentSlide(6);"
+                class="hover-shadow"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="see-all-album">
+          <p>
+            <a
+              onclick="openModal();onAutoPlay();currentSlide(1);"
+              class="hover-shadow"
+              href="#"
+              >Tất cả hình ảnh</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End album hình cưới -->
+    <!-- section-3 end  -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <!-- Progress bar -->
+        <div class="progress-bar-container">
+          <div class="hide" id="progress-bar"></div>
+        </div>
+        <div class="top-nav">
+          <div class="numbertext" id="number-page">1 / 6</div>
+          <div class="suport-nav">
+            <div class="nav-icon copy-img">
+              <i class="fa-regular fa-copy"></i>
+            </div>
+            <div class="nav-icon zoom-out">
+              <i class="fa-solid fa-magnifying-glass-minus"></i>
+            </div>
+            <div class="nav-icon zoom-in">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+            <div class="nav-icon auto-play" onclick="changePlayStatus()">
+              <i
+                class="fa-regular fa-circle-play play_icon"
+                style="display: none"
+              ></i>
+              <i class="fa-regular fa-circle-pause pause_icon"></i>
+            </div>
+            <div class="nav-icon close-btn" onclick="closeModal()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+        <div class="slide-block">
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-1" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-2" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-3" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-4" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-5" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-6" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-7" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-8" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-9" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-10" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+          <div class="mySlides">
+            <div class="thumb-img">
+              <img src="#" style="width: 100%" id="album-3-11" alt="" />
+            </div>
+            <div class="image-decs">
+              <h4></h4>
+            </div>
+          </div>
+        </div>
+        <!-- Next/previous controls -->
+        <a class="prev" onclick="offAutoPlay();plusSlides(-1)"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+        <a class="next" onclick="offAutoPlay();plusSlides(1)"
+          ><i class="fa-solid fa-arrow-right"></i
+        ></a>
+
+        <!-- Caption text -->
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <!-- Thumbnail image controls -->
+        <div class="wrap-thumbnail flyFromBottom">
+          <div class="Thumbnail">
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(1);"
+                alt="Nature"
+                id="slide-3-1"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(2)"
+                alt="Snow"
+                id="slide-3-2"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(3)"
+                alt="Mountains"
+                id="slide-3-3"
+              />
+            </div>
+
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(4)"
+                alt="Lights"
+                id="slide-3-4"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(5)"
+                alt="Lights"
+                id="slide-3-5"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(6)"
+                alt="Lights"
+                id="slide-3-6"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(7)"
+                alt="Lights"
+                id="slide-3-7"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(8)"
+                alt="Lights"
+                id="slide-3-8"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(9)"
+                alt="Lights"
+                id="slide-3-9"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(10)"
+                alt="Lights"
+                id="slide-3-10"
+              />
+            </div>
+            <div class="column">
+              <img
+                class="demo"
+                src="#"
+                onclick="offAutoPlay();currentSlide(11)"
+                alt="Lights"
+                id="slide-3-11"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="turnOffThumbnail">
+          <i class="fa-solid fa-table-cells"></i>
+        </div>
+      </div>
+    </div>
+    <!-- section-4 start  -->
+    <div class="section-four" id="link4">
+      <div class="container">
+        <div class="inner-wrap">
+          <div class="inner-calendar">
+            <h3 class="inner-title">
+              Tháng <span id="month"></span> / <span id="year"></span>
+            </h3>
+            <table class="inner-table-one">
+              <thead class="inner-table-head">
+                <tr>
+                  <th>Thứ 2</th>
+                  <th>Thứ 3</th>
+                  <th>Thứ 4</th>
+                  <th>Thứ 5</th>
+                  <th>Thứ 6</th>
+                  <th>Thứ 7</th>
+                  <th>CN</th>
+                </tr>
+              </thead>
+              <tbody id="inner-calendar-body">
+                <!-- Nội dung ngày tháng sẽ được JavaScript tự động thêm -->
+              </tbody>
+            </table>
+          </div>
+          <!-- Phần đếm ngược thời gian -->
+          <div class="inner-countdown">
+            <div class="inner-box">
+              <span id="days">0</span>
+              <p>Ngày</p>
+            </div>
+            <div class="inner-box">
+              <span id="hours">0</span>
+              <p>Giờ</p>
+            </div>
+            <div class="inner-box">
+              <span id="minutes">0</span>
+              <p>Phút</p>
+            </div>
+            <div class="inner-box">
+              <span id="seconds">0</span>
+              <p>Giây</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section-4 end  -->
+
+    <!-- section-5 start -->
+    <div class="section-5" id="link5">
+      <div class="container">
+        <div class="wrap">
+          <h2>Chuyện tình yêu</h2>
+          <h3>
+            Tình yêu không chỉ là một danh từ - nó là một động từ; nó còn hơn cả
+            một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh.
+          </h3>
+          <div class="inner-wrap">
+            <div class="outline-wrap">
+              <div class="time-line-card">
+                <div class="infor">
+                  <span class="date">December 12 2015</span>
+                  <h3 class="title">Bạn có tin vào tình yêu online không?</h3>
+                  <p id="text-5-1">
+                  </p>
+                  <div class="img-holder">
+                    <img src="#" alt="" id="img-5-1" />
+                  </div>
+                </div>
+              </div>
+              <div class="time-line-card">
+                <div class="infor">
+                  <span class="date">August 04 2016</span>
+                  <h3 class="title">Lời tỏ tình dễ thương^^</h3>
+                  <p id="text-5-2">
+                  </p>
+                  <div class="img-holder">
+                    <img src="#" alt="" id="img-5-2" />
+                  </div>
+                </div>
+              </div>
+              <div class="time-line-card">
+                <div class="infor">
+                  <span class="date">May 10 2018</span>
+                  <h3 class="title">Phút giây cầu hôn</h3>
+                  <p id="text-5-3">
+                  </p>
+                  <div class="img-holder">
+                    <img src="#" alt="" id="img-5-3" />
+                  </div>
+                </div>
+              </div>
+              <div class="time-line-card">
+                <div class="infor">
+                  <span class="date">July 28 2018</span>
+                  <h3 class="title">Ngày lễ đính hôn</h3>
+                  <p id="text-5-4">   
+                  </p>
+                  <div class="img-holder">
+                    <img src="#" alt="" id="img-5-4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section-5 end -->
+
+    <!-- section-6 -->
+    <div class="section-6" id="link6">
+      <div class="container">
+        <div class="section-6-main">
+          <h2 class="item">Lời ngỏ</h2>
+          <p class="item" id="text-6-1">
+          </p>
+          <div class="img-6 item">
+            <img src="#" alt="" id="img-6-1" />
+          </div>
+          <p class="text-6 item" style="padding-top: 40px">
+            *Groom/ <span>Quốc Khánh </span>
+          </p>
+          <p style="padding-bottom: 90px" class="text-6 item">
+            *Bride/ <span>Lan Anh </span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- end section-6 -->
+
+    <!-- section-7 start -->
+    <!-- Sự kiện cưới -->
+    <div class="wedding-event" id="link7">
+      <div class="container">
+        <div class="wedding-event-title">
+          <h2>Sự Kiện Cưới</h2>
+        </div>
+        <div class="wedding-event-desc">
+          <p>
+            Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến
+            đám cưới của chúng tôi!
+          </p>
+        </div>
+        <div class="inner-wedding">
+          <div class="event">
+            <div class="event-img">
+              <img src="#" alt="" id="img-7-1" />
+              <div class="dress-code">
+                <div class="color color-1"></div>
+                <div class="color color-2"></div>
+                <div class="color color-3"></div>
+              </div>
+            </div>
+            <div class="event-desc">
+              <h3>LỄ CƯỚI NHÀ NỮ</h3>
+              <p>09:00 | 10. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NỮ - Xóm 3, Thôn Anna, xã Dray Sáp, Krông Ana, Đắk
+                Lắk
+              </p>
+              <div class="event-info">
+                <!-- <p><a href="">Thêm vào lịch</a></p> -->
+                <p>
+                  <a
+                    href="https://www.google.com/maps/place/12%C2%B033'27.7%22N+107%C2%B057'50.0%22E/@12.557695,107.963887,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.557695!4d107.963887?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event-img">
+              <img src="#" alt="" id="img-7-2" />
+              <div class="dress-code">
+                <div class="color color-4"></div>
+                <div class="color color-5"></div>
+                <div class="color color-6"></div>
+              </div>
+            </div>
+            <div class="event-desc">
+              <h3>TIỆC CƯỚI NHÀ NỮ</h3>
+              <p>11:00 | 10. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NỮ - Xóm 3, Thôn Anna, xã Dray Sáp, Krông Ana, Đắk
+                Lắk
+              </p>
+              <div class="event-info">
+                <!-- <p><a href="">Thêm vào lịch</a></p> -->
+                <p>
+                  <a
+                    href="https://www.google.com/maps/place/12%C2%B033'27.7%22N+107%C2%B057'50.0%22E/@12.557695,107.963887,17z/data=!3m1!4b1!4m4!3m3!8m2!3d12.557695!4d107.963887?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event-img">
+              <img src="#" alt="" id="img-7-3"/>
+              <div class="dress-code">
+                <div class="color color-7"></div>
+                <div class="color color-8"></div>
+                <div class="color color-9"></div>
+              </div>
+            </div>
+            <div class="event-desc">
+              <h3>LỄ CƯỚI NHÀ NAM</h3>
+              <p>09:00 | 19. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NAM - Tổ 1, Ấp Tân Điền, xã Lý Nhơn, cần Giờ, TP. HCM
+              </p>
+              <div class="event-info">
+                <!-- <p><a href="">Thêm vào lịch</a></p> -->
+                <p>
+                  <a
+                    href="https://www.google.com/maps?q=FQ8G+6XJ+T%C3%B4m+kh%C3%B4+Thu%E1%BB%B3+Trang,+D%C6%B0%C6%A1ng+V%C4%83n+H%E1%BA%A1nh,+L%C3%BD+Nh%C6%A1n,+C%E1%BA%A7n+Gi%E1%BB%9D,+H%E1%BB%93+Ch%C3%AD+Minh&ftid=0x317539b1ba28e235:0xb145c281a345c200&entry=gps&lucs=,94203325,47075489,94216425,94216401,94249918,94244542,94242520,94224825,94227247,94227248,94247554,47071704,47069508,94218641,94233073,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTQxLjAuOTE2NjAYACDXggMqqwEsOTQyMDMzMjUsNDcwNzU0ODksOTQyMTY0MjUsOTQyMTY0MDEsOTQyNDk5MTgsOTQyNDQ1NDIsOTQyNDI1MjAsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyNDc1NTQsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMzMwNzMsOTQyMDMwMTksNDcwODQzMDQsOTQyMDg0NTgsOTQyMDg0NDdCAlZO&g_st=iz"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="event-img">
+              <img src="#" alt="" id="img-7-4"/>
+              <div class="dress-code">
+                <div class="color color-10"></div>
+                <div class="color color-11"></div>
+                <div class="color color-12"></div>
+              </div>
+            </div>
+            <div class="event-desc">
+              <h3>TIỆC CƯỚI NHÀ NAM</h3>
+              <p>11:00 | 19. 01. 2025</p>
+              <p>
+                TƯ GIA NHÀ NAM - Tổ 1, Ấp Tân Điền, xã Lý Nhơn, cần Giờ, TP. HCM
+              </p>
+              <div class="event-info">
+                <!-- <p><a href="">Thêm vào lịch</a></p> -->
+                <p>
+                  <a
+                    href="https://www.google.com/maps?q=FQ8G+6XJ+T%C3%B4m+kh%C3%B4+Thu%E1%BB%B3+Trang,+D%C6%B0%C6%A1ng+V%C4%83n+H%E1%BA%A1nh,+L%C3%BD+Nh%C6%A1n,+C%E1%BA%A7n+Gi%E1%BB%9D,+H%E1%BB%93+Ch%C3%AD+Minh&ftid=0x317539b1ba28e235:0xb145c281a345c200&entry=gps&lucs=,94203325,47075489,94216425,94216401,94249918,94244542,94242520,94224825,94227247,94227248,94247554,47071704,47069508,94218641,94233073,94203019,47084304,94208458,94208447&g_ep=CAISDTYuMTQxLjAuOTE2NjAYACDXggMqqwEsOTQyMDMzMjUsNDcwNzU0ODksOTQyMTY0MjUsOTQyMTY0MDEsOTQyNDk5MTgsOTQyNDQ1NDIsOTQyNDI1MjAsOTQyMjQ4MjUsOTQyMjcyNDcsOTQyMjcyNDgsOTQyNDc1NTQsNDcwNzE3MDQsNDcwNjk1MDgsOTQyMTg2NDEsOTQyMzMwNzMsOTQyMDMwMTksNDcwODQzMDQsOTQyMDg0NTgsOTQyMDg0NDdCAlZO&g_st=iz"
+                    target="_blank"
+                    >Xem bản đồ</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End sự kiện cưới -->
+    <!-- section-7 end -->
+    <!-- section-8 start  -->
+    <div class="section-bride-groom" id="link8">
+      <div class="container">
+        <div class="inner-wrap">
+          <h2 class="inner-title">Cô Dâu và Chú Rễ</h2>
+          <div class="inner-list-bg">
+            <div class="inner-box">
+              <div class="inner-image">
+                <img src="#" alt="" id="img-8-1"/>
+              </div>
+              <div class="inner-parent">
+                <span>Con ông: <strong>Trần Công Chiến</strong></span>
+                <span>Con bà: <strong>Nguyễn Thị Thùy Trang</strong></span>
+              </div>
+
+              <div class="inner-contact">
+                <span>Quốc Khánh / </span>
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="inner-box">
+              <div class="inner-image">
+                <img src="#" alt="" id="img-8-2"/>
+              </div>
+              <div class="inner-parent">
+                <span>Con ông: <strong>Vũ Công Đồng</strong></span>
+                <span>Con bà: <strong>Uông Thị Tuất</strong></span>
+              </div>
+
+              <div class="inner-contact">
+                <span>Lan Anh / </span>
+                <ul>
+                  <li>
+                    <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- section-8 end  -->
+
+    <!-- section-9 start  -->
+    <!-- Thông tin đăng kí xexe  -->
+    <div class="section-9" id="link9">
+      <div class="container">
+        <div class="section-9-main">
+          <p class="header-main">Thông tin đăng kí xe</p>
+          <div class="box-content" id="text-9-1">
+          </div>
+          <div class="list-qr">
+            <div class="qr-box">
+              <p class="text-qr">QR Form đăng kí</p>
+              <div class="qr-item">
+                <img src="" alt="" id="img-9-2" />
+              </div>
+              <a href="https://forms.gle/xUEXYPVpCX7VPMxj9" target="_blank"
+                >https://forms.gle/xUEXYPVpC...</a
+              >
+            </div>
+            <div class="qr-box">
+              <p class="text-qr">QR nhóm chat</p>
+              <div class="qr-item">
+                <img src="" alt="" id="img-9-1" />
+              </div>
+              <a href="https://zalo.me/g/galzyl356" target="_blank"
+                >https://zalo.me/g/galzyl356</a
+              >
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end Thông tin đăng kí xexe -->
+    <!-- section-9 end  -->
+
+    <!-- section-10 start  -->
+    <!-- Hộp mừng cưới -->
+    <div class="wedding-box" id="link10">
+      <div class="container">
+        <div class="wedding-box-title">
+          <h2>Hộp mừng cưới</h2>
+        </div>
+        <div class="wedding-box-desc">
+          <p>
+            Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như
+            đám cưới của chúng tôi.
+          </p>
+        </div>
+        <div class="qr-box">
+          <div class="qr">
+            <h3>ĐẾN CHÚ RỂ</h3>
+            <div class="qr-img">
+              <img src="./asset/img/QR.jpg" alt="" />
+            </div>
+            <p>Ngân hàng: VietinBank</p>
+            <p>Tên tài khoản: Trần Quốc Khánh</p>
+            <p>Số tài khoản: 104867404956</p>
+            <p>Chi nhánh: THU DUC - PGD METRO</p>
+          </div>
+          <div class="qr">
+            <h3>ĐẾN CÔ DÂU</h3>
+            <div class="qr-img">
+              <img src="./asset/img/QR.jpg" alt="" />
+            </div>
+            <p>Ngân hàng: VietinBank</p>
+            <p>Tên tài khoản: Trần Quốc Khánh</p>
+            <p>Số tài khoản: 104867404956</p>
+            <p>Chi nhánh: THU DUC - PGD METRO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End hộp mừng cưới -->
+    <!-- section-10 end  -->
+    <!-- section-11 start  -->
+    <div class="section-11" id="link11">
+      <div class="container">
+        <div class="wrap">
+          <h2 class="inner-title">Sổ Lưu Bút</h2>
+          <h3 class="inner-desc">
+            Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến
+            đám cưới của chúng tôi!
+          </h3>
+          <form id="greetForm" action="">
+            <div class="inner-form">
+              <div class="information">
+                <div class="name">
+                  <input
+                    id="nameInput"
+                    type="text"
+                    required
+                    placeholder="Nhập tên của bạn*"
+                  />
+                  <p class="error-message" id="nameError"></p>
+                </div>
+                
+              </div>
+
+              <div class="send-greet">
+                <textarea
+                  placeholder="Nhập lời chúc của bạn*"
+                  name=""
+                  id="greetInput"
+                ></textarea>
+
+                <div class="add-greet">
+                  <span data-bs-original-title="Lời chúc gợi ý">
+                    <i class="fa-regular fa-lightbulb"></i>
+                  </span>
+                  <span data-bs-original-title="Chèn biểu tượng">
+                    <i class="fa-regular fa-face-smile"></i>
+                  </span>
+                </div>
+              </div>
+              <p class="error-message" id="greetError"></p>
+
+              <div class="greet-btn">
+                <button type="submit">GỬI LỜI CHÚC</button>
+              </div>
+            </div>
+          </form>
+          <div class="show-comment">
+            <div class="box-comment">
+              <h2 class="title">Bạn Thân</h2>
+              <p class="detail">
+                "Một cuộc hôn nhân thành công đòi hỏi phải yêu nhiều lần, và
+                luôn ở cùng một người" - Chúc cho hai bạn sẽ có được một cuộc
+                hôn nhân viên mãn, trăm năm hạnh phúc!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- section-11 end  -->
+
+    <div class="section-thank-you">
+      <div class="container">
+        <div class="inner-wrap">
+          <h3>Thank you!</h3>
+          <h5>-- Quốc Khánh & Lan Anh --</h5>
+        </div>
+      </div>
+    </div>
+
+    <!-- /* Các nút icon wedding . */ -->
+    <div class="section-12">
+      <div class="box-item-wedding">
+        <div class="box-button-wedding">
+          <div class="button-wedding">
+            <a href="#link11"><i class="fa-regular fa-message"></i></a>
+          </div>
+          <div class="text-wedding">Gửi lời chúc</div>
+        </div>
+        <div class="box-button-wedding">
+          <div class="button-wedding">
+            <a href="#link9"
+              ><i class="fa-solid fa-bus"></i>
+            </a>
+          </div>
+          <div class="text-wedding">Đăng kí xe</div>
+        </div>
+        <div class="box-button-wedding pay-btn2">
+          <div class="button-wedding">
+            <a href=""><i class="fa-solid fa-sack-dollar"></i></a>
+          </div>
+          <div class="text-wedding">Mừng cưới</div>
+        </div>
+        <div class="box-button-wedding">
+          <div class="button-wedding button-close">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-open">
+        <div class="button-wedding"><i class="fa-solid fa-bars"></i></div>
+      </div>
+
+      <div class="button-wedding-volum close-volum">
+        <div class="button-wedding">
+          <i class="fa-solid fa-volume-xmark"></i>
+        </div>
+      </div>
+      <div class="text-volum">Click vào đây để nghe âm thanh</div>
+      <div class="button-wedding-volum open-volum">
+        <div class="button-wedding">
+          <i class="fa-solid fa-volume-high"></i>
+          <audio class="audio">
+            <source src="asset/mp3/Bai 2 - I Do.mp3" />
+          </audio>
+        </div>
+      </div>
+    </div>
+    <!-- /* End Các nút icon wedding . */ -->
+    <!-- //Snow-fall -->
+    <div id="snowfall-container"></div>
+    <script type="module" src="asset/Javascript/main.js"></script>
+    <script src="asset/Javascript/album.js"></script>
+  </body>
+</html>
