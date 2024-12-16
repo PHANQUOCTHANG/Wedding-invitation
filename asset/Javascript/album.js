@@ -1,6 +1,4 @@
 // Open the Modal
-"strict mode";
-
 const imgDesc = [
   "Tình yêu là điều kiện trong đó hạnh phúc của người khác là điều cần thiết cho chính bạn",
   "Tình yêu không chỉ là một danh từ - nó là một động từ; nó còn hơn cả một cảm giác - đó là sự quan tâm, chia sẻ, giúp đỡ, hy sinh",
@@ -46,12 +44,6 @@ function hideElements() {
     prevBtn.style.opacity = "0";
   }
 }
-var remindBox = document.querySelector(".remindScroll");
-let timeout2;
-function showRemind() {
-  remindBox.classList.remove("hide");
-  console.log("oce");
-}
 function resetTimer() {
   // Xóa bộ đếm thời gian cũ
   imageTop.style.transform = "tranlateY(0px)";
@@ -66,6 +58,14 @@ function resetTimer() {
   // Thiết lập bộ đếm thời gian mới
   timeout = setTimeout(hideElements, 3000); // 10 giây
 }
+modal.addEventListener("click", resetTimer);
+modal.addEventListener("mousemove", resetTimer);
+modal.addEventListener("keypress", resetTimer);
+var remindBox = document.querySelector(".remindScroll");
+let timeout2;
+function showRemind() {
+  remindBox.classList.remove("hide");
+}
 function resetTimer1() {
   // Xóa bộ đếm thời gian cũ
   remindBox.classList.add("hide");
@@ -74,11 +74,7 @@ function resetTimer1() {
   timeout2 = setTimeout(showRemind, 20000);
 }
 // Lắng nghe các sự kiện tương tác
-modal.addEventListener("click", resetTimer);
-modal.addEventListener("mousemove", resetTimer);
-modal.addEventListener("keypress", resetTimer);
 body.addEventListener("click", resetTimer1);
-body.addEventListener("scroll", resetTimer1);
 body.addEventListener("mousemove", resetTimer1);
 body.addEventListener("keypress", resetTimer1);
 // Khởi động bộ đếm thời gian khi trang được tải
