@@ -46,9 +46,8 @@ export const textWedding = {
   Xin chào các Anh/Chị/Bạn thân mến ! Lời đầu tiên, chúng em xin gửi
             lời cảm ơn chân thành đến Anh/Chị/Bạn vì đã dành thời gian quý báu
             để tham dự ngày trọng đại của chúng em. Để việc di chuyển được thuận
-            tiện, chúng em đã sắp xếp xe đưa đón từ TP.HCM đến Cần Giờ.
-  `
-
+            tiện, chúng em đã sắp xếp xe đưa đón từ <u>TP.HCM</u> đến <u>Cần Giờ</u> .
+  `,
 
   // end section-9 .
 };

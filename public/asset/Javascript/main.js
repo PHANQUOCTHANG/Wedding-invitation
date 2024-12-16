@@ -7,7 +7,52 @@ import { snowFall } from "./module/snowFall.js";
 import { sendGreet } from "./module/sendGreet.js";
 import { Links } from "./module/Link.js";
 import { textWedding } from "./module/Text-wedding.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+// Firebase Configuration
+async function oce() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyC4J4vNDDyOzL71pIt3kt-pSqVVsgGyPKo",
+    authDomain: "iwedding-14b7b.firebaseapp.com",
+    projectId: "iwedding-14b7b",
+    storageBucket: "iwedding-14b7b.appspot.com",
+    messagingSenderId: "551497067888",
+    appId: "1:551497067888:web:684c654b7bd519f505f3b5",
+    measurementId: "G-L93WV3ZVSZ",
+  };
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
+  // Form và danh sách lời chúc
+  const wishForm = document.getElementById("greetForm");
+  const wishList = document.querySelector(".show-comment");
+  // Gửi lời chúc
+  // Lấy và hiển thị lời chúc theo thời gian thực
+  const q = query(collection(db, "wishes"), orderBy("timestamp", "desc"));
+  onSnapshot(q, (snapshot) => {
+    let htmls = ``;
+
+    snapshot.forEach((doc) => {
+      const wishData = doc.data();
+      htmls += `
+        <div class="wish">
+          <p><strong>${wishData.name}</strong>:</p>
+          <p>${wishData.wish}</p>
+        </div>
+      `;
+    });
+    wishList.innerHTML = htmls;
+  });
+}
+oce();
 //xử lý khi mới vào trang
 const s0_title = document.querySelector(".section-1 .wrap .inner-title");
 const s0_img = document.querySelector(".section-1 .wrap .inner-img");
@@ -102,7 +147,7 @@ slide_3_11.src = Links.img_3_11;
 
 // end album ảnh cưới (sectiom-3) .
 
-// section-5 (ảnh thiệp cưới - chuyện tình yêu) 
+// section-5 (ảnh thiệp cưới - chuyện tình yêu)
 const img_5_1 = document.querySelector("#img-5-1");
 img_5_1.src = Links.img_5_1;
 const img_5_2 = document.querySelector("#img-5-2");
@@ -143,34 +188,31 @@ img_9_1.src = Links.img_9_1;
 const img_9_2 = document.querySelector("#img-9-2");
 img_9_2.src = Links.img_9_2;
 
-// end 
+// end
 
 //<-------------------- Links variables -------------------------> .
-
-
 
 //<-------------------- Texts variables -------------------------> .
 
 // section-5 (chuyện tình yêuyêu)
-  const text_5_1 = document.querySelector("#text-5-1") ;
-  text_5_1.innerHTML = textWedding.text_5_1 ;
-  const text_5_2 = document.querySelector("#text-5-2") ;
-  text_5_2.innerHTML = textWedding.text_5_2 ;
-  const text_5_3 = document.querySelector("#text-5-3") ;
-  text_5_3.innerHTML = textWedding.text_5_3 ;
-  const text_5_4 = document.querySelector("#text-5-4") ;
-  text_5_4.innerHTML = textWedding.text_5_4 ;
+const text_5_1 = document.querySelector("#text-5-1");
+text_5_1.innerHTML = textWedding.text_5_1;
+const text_5_2 = document.querySelector("#text-5-2");
+text_5_2.innerHTML = textWedding.text_5_2;
+const text_5_3 = document.querySelector("#text-5-3");
+text_5_3.innerHTML = textWedding.text_5_3;
+const text_5_4 = document.querySelector("#text-5-4");
+text_5_4.innerHTML = textWedding.text_5_4;
 // end section-5
 
-
 // section-6 (lời ngỏ)
-const text_6_1 = document.querySelector("#text-6-1") ;
-text_6_1.innerHTML = textWedding.text_6_1 ;
+const text_6_1 = document.querySelector("#text-6-1");
+text_6_1.innerHTML = textWedding.text_6_1;
 // end section-6
 
 // section-9 (Thông tin đăng kí lái xe)
-const text_9_1 = document.querySelector("#text-9-1") ;
-text_9_1.innerHTML = textWedding.text_9_1 ;
+const text_9_1 = document.querySelector("#text-9-1");
+text_9_1.innerHTML = textWedding.text_9_1;
 
 // endend
 

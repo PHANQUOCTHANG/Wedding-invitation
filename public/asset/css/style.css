@@ -1015,13 +1015,6 @@ div.selected {
   flex-wrap: wrap;
 }
 
-.section-9-main .box-img {
-  width: 50%;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(100px);
-}
-
 .section-9-main .header-main {
   font-size: 50px;
   font-family: var(--font-one--);
@@ -1034,44 +1027,61 @@ div.selected {
 }
 
 .section-9 .box-content {
-  line-height: 1.5 ;
+  line-height: 1.5;
+  text-align: center;
   font-size: 18px;
+  opacity: 0;
+  transform: translateY(200px);
 }
 
 .section-9 img {
   object-fit: cover;
-  width: 100% ;
+  width: 100%;
   height: 100%;
 }
 
 .section-9 .qr-box {
-  width: 45%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
+  opacity: 0;
+  transform: translateY(200px);
 }
 
 .section-9 .list-qr {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 20px;
+  align-items: center;
 }
-
+@media (max-width: 475px) {
+  .section-9 .list-qr {
+    flex-wrap: wrap;
+  }
+  .section-9 .qr-box {
+    width: 100%;
+  }
+  .section-9 .qr-box:last-child {
+    margin-top: 40px;
+  }
+}
 .section-9 .text-qr {
-  font-size : 20px ;
+  font-size: 20px;
+  text-align: center;
   font-weight: bold;
 }
 
 .section-9 a {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .section-9-main {
-  background-image: url(../img/image.png);
   background-position: center center;
-  background-size: contain ;
+  background-size: contain;
 }
 
 /* 
@@ -1291,7 +1301,7 @@ div.selected {
 .section-11 .wrap .inner-form .information > div {
   border-radius: 7px;
   transition: 0.1s;
-  width: 100% ;
+  width: 100%;
   border: none;
   outline: none;
   overflow: hidden;
@@ -1360,35 +1370,32 @@ div.selected {
   text-align: left;
   padding: 16px 24px;
   overflow: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1),
+    /* Shadow on top */ 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow on bottom */
 }
-.section-11 .wrap .show-comment .box-comment {
+@media (max-width: 475px) {
+  .section-11 .wrap .show-comment {
+    height: 300px;
+  }
+}
+.section-11 .wrap .show-comment .wish {
   position: relative;
-  padding: 20px 0;
+  padding: 20px 10px;
+  border: none;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
-.section-11 .wrap .show-comment .box-comment:last-child {
-  padding-bottom: 0;
-}
-.section-11 .wrap .show-comment .box-comment:last-child::before {
-  display: none;
-}
-.section-11 .wrap .show-comment .box-comment::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: gray;
-  left: 0;
-  bottom: 0;
-}
-.section-11 .wrap .show-comment .box-comment .title {
-  font-size: 24px;
+
+.section-11 .wrap .show-comment .wish p:first-child {
   margin: 4px 0 8px;
+  padding-bottom: 0;
+  font-size: 18px;
   font-weight: 400;
   color: #212529;
 }
-.section-11 .wrap .show-comment .box-comment .detail {
-  font-size: 16px;
+.section-11 .wrap .show-comment .wish p:last-child {
+  font-size: 15px;
   color: #212529;
 }
 
@@ -1548,7 +1555,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-  z-index:1000 ; 
+  z-index: 1000;
   padding-left: 50px;
 }
 /* extra div  */
@@ -1764,7 +1771,6 @@ body {
     transform: translateY(100px);
     margin-bottom: 40px ;
   } */
-
 
   /* end Phù dâu & Phù rể */
   /* Hộp mừng cưới start */

@@ -64,10 +64,9 @@ export function scrollEvent() {
   const s8_items2 = Array.from(s8_items[1].children);
 
   // animation section-9
+  const s9_contentt = document.querySelector(".section-9 .box-content ");
   const s9_title = document.querySelector(".section-9-main .header-main");
-  const s9_items = document.querySelectorAll(
-    ".section-9-main .box-item .box-img"
-  );
+  const s9_items = document.querySelectorAll(".section-9 .qr-box ");
   // animation section-10
   const s10_title = document.querySelector(".wedding-box .wedding-box-title");
   const s10_desc = document.querySelector(".wedding-box .wedding-box-desc");
@@ -255,6 +254,11 @@ export function scrollEvent() {
     s9_title.classList.add("moveFromBottom");
   } else {
     s9_title.classList.remove("moveFromBottom");
+  }
+  if (window.pageYOffset + window.innerHeight >= s9_contentt.offsetTop + 100) {
+    s9_contentt.classList.add("moveFromBottom");
+  } else {
+    s9_contentt.classList.remove("moveFromBottom");
   }
   s9_items.forEach((element) => {
     if (window.pageYOffset + window.innerHeight >= element.offsetTop + 100) {
