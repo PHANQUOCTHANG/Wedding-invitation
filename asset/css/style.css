@@ -1031,11 +1031,53 @@ div.selected {
   color: #474747;
   font-weight: 400;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   opacity: 0;
   transform: translateY(100px);
 }
 
+.section-9 .box-content {
+  line-height: 1.5 ;
+  font-size: 18px;
+}
+
+.section-9 img {
+  object-fit: cover;
+  width: 100% ;
+  height: 100%;
+}
+
+.section-9 .qr-box {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-9 .list-qr {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.section-9 .text-qr {
+  font-size : 20px ;
+  font-weight: bold;
+}
+
+.section-9 a {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.section-9-main {
+  background-image: url(../img/image.png);
+  background-position: center center;
+  background-size: contain ;
+}
+
+/* 
 .section-9-main .header-text {
   font-size: 20px;
   font-family: var(--font-two--);
@@ -1059,7 +1101,7 @@ div.selected {
   border-radius: 50%;
   width: 200px;
   height: 200px;
-}
+} */
 
 /* end section-9 */
 /* Co Dau & Chu Re */
@@ -1252,7 +1294,7 @@ div.selected {
 .section-11 .wrap .inner-form .information > div {
   border-radius: 7px;
   transition: 0.1s;
-  width: calc(50% - 10px);
+  width: 100% ;
   border: none;
   outline: none;
   overflow: hidden;
@@ -1405,7 +1447,7 @@ body {
   position: fixed;
   left: 50px;
   bottom: 70px;
-  z-index: 5000;
+  z-index: 2000;
 }
 
 .section-12 .open-volum {
@@ -1509,7 +1551,7 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease;
-  z-index: 3199;
+  z-index:1000 ; 
   padding-left: 50px;
 }
 /* extra div  */
@@ -1688,7 +1730,7 @@ body {
   /* end lời ngỏ . */
 
   /* Phù dâu & Phù rể  */
-  .section-9-main .box-img {
+  /* .section-9-main .box-img {
     width: 100%;
     transform: translateY(100px);
     margin-top: 70px;
@@ -1708,7 +1750,15 @@ body {
     border-radius: 50%;
     width: 260px;
     height: 260px;
-  }
+  } */
+
+  /* .section-9-main .header-main {
+    font-size: 40px;
+    transform: translateY(100px);
+    margin-bottom: 40px ;
+  } */
+
+
   /* end Phù dâu & Phù rể */
   /* Hộp mừng cưới start */
   .wedding-box .qr-box {
