@@ -34,7 +34,7 @@ export function buttonEvent() {
       openVolum.style.display = "block";
       closeVolum.style.display = "none";
       audio.play();
-      check = true;
+      // check = true;
     });
 
     // bắt sự kiện khi click nút  openvolum 

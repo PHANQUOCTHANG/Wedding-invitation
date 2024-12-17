@@ -7,7 +7,7 @@ import {
   getDocs,
   onSnapshot,
   query,
-  orderBy
+  orderBy,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 
 // Cấu hình Firebase
@@ -30,10 +30,10 @@ async function loadImages() {
   const colImg = document.querySelectorAll(".col");
   const slideBlock = document.querySelector(".slide-block");
   const thumbNail = document.querySelector(".Thumbnail");
-  
+
   // Truy cập collection "album"
   const querySnapshot = await getDocs(collection(db, "album"));
-  
+
   let col1 = ``;
   let col2 = ``;
   let count = 1;
@@ -43,7 +43,7 @@ async function loadImages() {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
 
-    // album-img . 
+    // album-img .
     let divAlbumImg = `<div class="img">
               <img
                 src=${data.url}
@@ -97,7 +97,7 @@ async function loadImages() {
 // Hàm chuyển đổi link YouTube thành dạng nhúng
 function convertToEmbedURL(youtubeURL) {
   const url = new URL(youtubeURL);
-  const videoId = url.searchParams.get("v"); 
+  const videoId = url.searchParams.get("v");
   if (videoId) {
     return `https://www.youtube.com/embed/${videoId}`;
   }
@@ -139,7 +139,8 @@ async function loadIntroduction() {
         "https://www.youtube.com/embed/defaultVideoID";
       VideoIntro.textContent = data.videoIntro || "Chưa có thông tin";
       eventIntro.textContent = data.eventIntro || "Chưa có thông tin";
-      busInfoIntro.innerHTML = data.busInfoIntro + ` ${address_a}` || "Chưa có thông tin";
+      busInfoIntro.innerHTML =
+        data.busInfoIntro + ` ${address_a}` || "Chưa có thông tin";
       guestBookIntro.textContent = data.guestBookIntro || "Chưa có thông tin";
       imageIntroUrl.src = data.imageIntroUrl || linkDefault;
       imageIntroUrl2.src = data.imageIntroUrl2 || linkDefault;
