@@ -272,6 +272,9 @@
 } */
 
 /* Video cưới */
+.section-2 {
+  display: none;
+}
 .section-2-main {
   background-color: #f8f8f8;
   text-align: center;
@@ -471,7 +474,7 @@
   transform: rotateX(0deg) !important;
 }
 .wedding-event .inner-wedding .event h3 {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 .wedding-event .inner-wedding .event-img {
   position: relative;
@@ -993,6 +996,10 @@ div.selected {
   line-height: 2;
 }
 
+.section-6 .text-6 {
+  text-align:  center ;
+}
+
 .section-6-main img {
   max-width: 100%;
   height: auto;
@@ -1058,7 +1065,6 @@ div.selected {
   font-size: 17.6px;
   opacity: 0;
   transform: translateY(200px);
-  text-align: center;
 }
 
 .section-9 img {
