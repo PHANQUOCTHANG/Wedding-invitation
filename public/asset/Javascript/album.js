@@ -62,23 +62,6 @@ modal.addEventListener("click", resetTimer);
 modal.addEventListener("mousemove", resetTimer);
 modal.addEventListener("keypress", resetTimer);
 var remindBox = document.querySelector(".remindScroll");
-let timeout2;
-function showRemind() {
-  remindBox.classList.remove("hide");
-}
-function resetTimer1() {
-  // Xóa bộ đếm thời gian cũ
-  remindBox.classList.add("hide");
-  clearTimeout(timeout2);
-  // Thiết lập bộ đếm thời gian mới
-  timeout2 = setTimeout(showRemind, 20000);
-}
-// Lắng nghe các sự kiện tương tác
-body.addEventListener("click", resetTimer1);
-body.addEventListener("mousemove", resetTimer1);
-body.addEventListener("keypress", resetTimer1);
-// Khởi động bộ đếm thời gian khi trang được tải
-resetTimer1();
 resetTimer();
 function changePlayStatus() {
   if (checkPlay) {

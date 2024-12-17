@@ -7,6 +7,17 @@ import { snowFall } from "./module/snowFall.js";
 import { sendGreet } from "./module/sendGreet.js";
 import { Links } from "./module/Link.js";
 import { textWedding } from "./module/Text-wedding.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp,
+  onSnapshot,
+  query,
+  orderBy,
+} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
+// Firebase Configuration
 
 //xử lý khi mới vào trang
 const s0_title = document.querySelector(".section-1 .wrap .inner-title");
@@ -102,7 +113,7 @@ sendGreet();
 
 // end album ảnh cưới (sectiom-3) .
 
-// section-5 (ảnh thiệp cưới - chuyện tình yêu) 
+// section-5 (ảnh thiệp cưới - chuyện tình yêu)
 const img_5_1 = document.querySelector("#img-5-1");
 img_5_1.src = Links.img_5_1;
 const img_5_2 = document.querySelector("#img-5-2");
@@ -120,21 +131,21 @@ img_5_4.src = Links.img_5_4;
 // end lời ngỏ .
 
 // section-7 (lễ cưới + tiệc cướicưới)
-const img_7_1 = document.querySelector("#img-7-1");
-img_7_1.src = Links.img_7_1;
-const img_7_2 = document.querySelector("#img-7-2");
-img_7_2.src = Links.img_7_2;
-const img_7_3 = document.querySelector("#img-7-3");
-img_7_3.src = Links.img_7_3;
-const img_7_4 = document.querySelector("#img-7-4");
-img_7_4.src = Links.img_7_4;
+// const img_7_1 = document.querySelector("#img-7-1");
+// img_7_1.src = Links.img_7_1;
+// const img_7_2 = document.querySelector("#img-7-2");
+// img_7_2.src = Links.img_7_2;
+// const img_7_3 = document.querySelector("#img-7-3");
+// img_7_3.src = Links.img_7_3;
+// const img_7_4 = document.querySelector("#img-7-4");
+// img_7_4.src = Links.img_7_4;
 // end  section-7
 
 // section-8 (cô dâu và chú rểrể)
-const img_8_1 = document.querySelector("#img-8-1");
-img_8_1.src = Links.img_8_1;
-const img_8_2 = document.querySelector("#img-8-2");
-img_8_2.src = Links.img_8_2;
+// const img_8_1 = document.querySelector("#img-8-1");
+// img_8_1.src = Links.img_8_1;
+// const img_8_2 = document.querySelector("#img-8-2");
+// img_8_2.src = Links.img_8_2;
 // end section-8
 
 // qr nhóm chat + form đăng kí .
@@ -143,35 +154,60 @@ img_9_1.src = Links.img_9_1;
 const img_9_2 = document.querySelector("#img-9-2");
 img_9_2.src = Links.img_9_2;
 
-// end 
+// end
 
 //<-------------------- Links variables -------------------------> .
-
-
 
 //<-------------------- Texts variables -------------------------> .
 
 // section-5 (chuyện tình yêuyêu)
-  const text_5_1 = document.querySelector("#text-5-1") ;
-  text_5_1.innerHTML = textWedding.text_5_1 ;
-  const text_5_2 = document.querySelector("#text-5-2") ;
-  text_5_2.innerHTML = textWedding.text_5_2 ;
-  const text_5_3 = document.querySelector("#text-5-3") ;
-  text_5_3.innerHTML = textWedding.text_5_3 ;
-  const text_5_4 = document.querySelector("#text-5-4") ;
-  text_5_4.innerHTML = textWedding.text_5_4 ;
+const text_5_1 = document.querySelector("#text-5-1");
+text_5_1.innerHTML = textWedding.text_5_1;
+const text_5_2 = document.querySelector("#text-5-2");
+text_5_2.innerHTML = textWedding.text_5_2;
+const text_5_3 = document.querySelector("#text-5-3");
+text_5_3.innerHTML = textWedding.text_5_3;
+const text_5_4 = document.querySelector("#text-5-4");
+text_5_4.innerHTML = textWedding.text_5_4;
 // end section-5
 
-
 // section-6 (lời ngỏ)
-const text_6_1 = document.querySelector("#text-6-1") ;
-text_6_1.innerHTML = textWedding.text_6_1 ;
+const text_6_1 = document.querySelector("#text-6-1");
+text_6_1.innerHTML = textWedding.text_6_1;
 // end section-6
 
 // section-9 (Thông tin đăng kí lái xe)
-const text_9_1 = document.querySelector("#text-9-1") ;
-text_9_1.innerHTML = textWedding.text_9_1 ;
+const text_9_1 = document.querySelector("#text-9-1");
+text_9_1.innerHTML = textWedding.text_9_1;
 
 // endend
 
 // end
+const firebaseConfig = {
+  apiKey: "AIzaSyC4J4vNDDyOzL71pIt3kt-pSqVVsgGyPKo",
+  authDomain: "iwedding-14b7b.firebaseapp.com",
+  projectId: "iwedding-14b7b",
+  storageBucket: "iwedding-14b7b.appspot.com",
+  messagingSenderId: "551497067888",
+  appId: "1:551497067888:web:684c654b7bd519f505f3b5",
+  measurementId: "G-L93WV3ZVSZ",
+};
+
+//Xử lý realtime sổ lưu bút
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const wishList = document.querySelector(".show-comment");
+const wishesRef = collection(db, "wishes"); // Tham chiếu đến collection "wishes"
+const q = query(wishesRef, orderBy("timestamp", "desc")); // Truy vấn và sắp xếp theo timestamp
+onSnapshot(q, (snapshot) => {
+  wishList.innerHTML = "";
+  snapshot.forEach((doc) => {
+    const wishData = doc.data();
+    wishList.innerHTML += `
+      <div class="wish">
+          <p><strong>${wishData.name}</strong></p>
+          <p>${wishData.wish}</p>
+      </div>
+    `;
+  });
+});

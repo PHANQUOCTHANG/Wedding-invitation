@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       property="og:image"
-      content="https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/logo_iwedding.png?alt=media&token=12b8f825-5a1f-4775-8af4-f197ebe61511"
+      content="https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/iwedding%2F3471.jpg?alt=media&token=e56635c0-0649-4536-a436-3cb7e202431e"
     />
     <link
       rel="stylesheet"
@@ -24,6 +24,7 @@
       type="image/x-icon"
     />
     <title>Khánh & Anh</title>
+
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/11.1.0/firebase-app-compat.js"></script>
     <!-- include only the Firebase features as you need -->
@@ -94,9 +95,9 @@
           <li>
             <a href="#link3"> Album Hình Cưới </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#link5"> Chuyện Tình Yêu </a>
-          </li>
+          </li> -->
           <li>
             <a href="#link6"> Lời Ngỏ </a>
           </li>
@@ -107,7 +108,7 @@
             <a href="#link8"> Cô Dâu & Chú Rể </a>
           </li>
           <li>
-            <a href="#link9"> Phù Dâu & Phù Rể </a>
+            <a href="#link9"> Đăng kí xe </a>
           </li>
           <li>
             <a href="#so-luu-but"> Sổ Lưu Bút </a>
@@ -135,7 +136,7 @@
             <h2>Hộp mừng cưới</h2>
           </div>
           <div class="wedding-box-desc-extra">
-            <p>
+            <p id="wMoneyIntro">
               Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt
               như đám cưới của chúng tôi.
             </p>
@@ -149,17 +150,17 @@
               <p>Ngân hàng: VietinBank</p>
               <p>Tên tài khoản: Trần Quốc Khánh</p>
               <p>Số tài khoản: 104867404956</p>
-              <p>Chi nhánh: THU DUC - PGD METRO</p>
+              <p>Chi nhánh: THU DUC</p>
             </div>
             <div class="qr">
               <h3>ĐẾN CÔ DÂU</h3>
               <div class="qr-img">
-                <img src="./asset/img/QR.jpg" alt="" />
+                <img src="./asset/img/qr-bride.png" alt="" />
               </div>
-              <p>Ngân hàng: VietinBank</p>
-              <p>Tên tài khoản: Trần Quốc Khánh</p>
-              <p>Số tài khoản: 104867404956</p>
-              <p>Chi nhánh: THU DUC - PGD METRO</p>
+              <p>Ngân hàng: BIDV</p>
+              <p>Tên tài khoản: Vũ Thị Lan Anh</p>
+              <p>Số tài khoản:  1810385016</p>
+              <p>Chi nhánh: THU DUC</p>
             </div>
           </div>
         </div>
@@ -188,6 +189,7 @@
       <div class="container">
         <div class="wrap">
           <div class="inner-title">
+            <span><img src="asset/img/text-wedding-header.jpg" alt="" style="width: 50%; margin-left: 50px;"></span>
             <p>Chúng tôi</p>
             <div class="time-wedding">
               <p class="we">19</p>
@@ -199,7 +201,7 @@
             <div class="main-img">
               <img src="" alt="" id="imageIntroUrl" />
             </div>
-            <div class="wedding-title" >
+            <div class="wedding-title">
               <img src="asset/img/wedding-title.png" alt="" />
             </div>
             <div class="wedding-desc">
@@ -239,7 +241,8 @@
           <p>Video Cưới</p>
           <p id="text">Tình yêu không làm cho thế giới xoay tròn.</p>
           <span class="iframe">
-            <iframe id="link-youtube"
+            <iframe
+              id="link-youtube"
               src=""
               title="YouTube video player"
               frameborder="0"
@@ -639,7 +642,7 @@
     <!-- section-4 end  -->
 
     <!-- section-5 start -->
-    <div class="section-5" id="link5">
+    <div class="section-5 hide" id="link5">
       <div class="container">
         <div class="wrap">
           <h2>Chuyện tình yêu</h2>
@@ -732,7 +735,7 @@
         <div class="inner-wedding">
           <div class="event">
             <div class="event-img">
-              <img src="#" alt="" id="img-7-1" />
+              <img src="#" alt="" id="eventUrl1" />
               <div class="dress-code">
                 <div class="color color-1"></div>
                 <div class="color color-2"></div>
@@ -760,7 +763,7 @@
           </div>
           <div class="event">
             <div class="event-img">
-              <img src="#" alt="" id="img-7-2" />
+              <img src="#" alt="" id="eventUrl2" />
               <div class="dress-code">
                 <div class="color color-4"></div>
                 <div class="color color-5"></div>
@@ -788,7 +791,7 @@
           </div>
           <div class="event">
             <div class="event-img">
-              <img src="#" alt="" id="img-7-3" />
+              <img src="#" alt="" id="eventUrl3" />
               <div class="dress-code">
                 <div class="color color-7"></div>
                 <div class="color color-8"></div>
@@ -815,7 +818,7 @@
           </div>
           <div class="event">
             <div class="event-img">
-              <img src="#" alt="" id="img-7-4" />
+              <img src="#" alt="" id="eventUrl4" />
               <div class="dress-code">
                 <div class="color color-10"></div>
                 <div class="color color-11"></div>
@@ -853,7 +856,7 @@
           <div class="inner-list-bg">
             <div class="inner-box">
               <div class="inner-image">
-                <img src="#" alt="" id="img-8-1" />
+                <img src="#" alt="" id="groomUrl" />
               </div>
               <div class="inner-parent">
                 <span>Con ông: <strong>Trần Công Chiến</strong></span>
@@ -877,7 +880,7 @@
             </div>
             <div class="inner-box">
               <div class="inner-image">
-                <img src="#" alt="" id="img-8-2" />
+                <img src="#" alt="" id="brideUrl" />
               </div>
               <div class="inner-parent">
                 <span>Con ông: <strong>Vũ Công Đồng</strong></span>
@@ -914,12 +917,12 @@
           <div class="box-content" id="text-9-1"></div>
           <div class="list-qr">
             <div class="qr-box">
-              <p class="text-qr">QR Form đăng kí</p>
+              <p class="text-qr">QR Form đăng ký</p>
               <div class="qr-item">
                 <img src="" alt="" id="img-9-2" />
               </div>
               <a href="https://forms.gle/xUEXYPVpCX7VPMxj9" target="_blank"
-                >https://forms.gle/xUEXYPVpC...</a
+                >Nhấn để đăng ký</a
               >
             </div>
             <div class="qr-box">
@@ -928,7 +931,7 @@
                 <img src="" alt="" id="img-9-1" />
               </div>
               <a href="https://zalo.me/g/galzyl356" target="_blank"
-                >https://zalo.me/g/galzyl356</a
+                >Nhấn để tham gia</a
               >
             </div>
           </div>
@@ -946,7 +949,7 @@
           <h2>Hộp mừng cưới</h2>
         </div>
         <div class="wedding-box-desc">
-          <p>
+          <p id="wMoneyIntro">
             Thật vui vì được gặp và đón tiếp các bạn trong một dịp đặc biệt như
             đám cưới của chúng tôi.
           </p>
@@ -960,17 +963,17 @@
             <p>Ngân hàng: VietinBank</p>
             <p>Tên tài khoản: Trần Quốc Khánh</p>
             <p>Số tài khoản: 104867404956</p>
-            <p>Chi nhánh: THU DUC - PGD METRO</p>
+            <p>Chi nhánh: THU DUC</p>
           </div>
           <div class="qr">
             <h3>ĐẾN CÔ DÂU</h3>
             <div class="qr-img">
-              <img src="./asset/img/QR.jpg" alt="" />
+              <img src="./asset/img/qr-bride.png" alt="" />
             </div>
-            <p>Ngân hàng: VietinBank</p>
-            <p>Tên tài khoản: Trần Quốc Khánh</p>
-            <p>Số tài khoản: 104867404956</p>
-            <p>Chi nhánh: THU DUC - PGD METRO</p>
+            <p>Ngân hàng: BIDV</p>
+            <p>Tên tài khoản: Vũ Thị Lan Anh</p>
+            <p>Số tài khoản: 1810385016</p>
+            <p>Chi nhánh: THU DUC</p>
           </div>
         </div>
       </div>
@@ -993,7 +996,6 @@
                   <input
                     id="nameInput"
                     type="text"
-                    required
                     placeholder="Nhập tên của bạn*"
                   />
                   <p class="error-message" id="nameError"></p>
@@ -1007,14 +1009,14 @@
                   id="greetInput"
                 ></textarea>
 
-                <div class="add-greet">
+                <!-- <div class="add-greet">
                   <span data-bs-original-title="Lời chúc gợi ý">
                     <i class="fa-regular fa-lightbulb"></i>
                   </span>
                   <span data-bs-original-title="Chèn biểu tượng">
                     <i class="fa-regular fa-face-smile"></i>
                   </span>
-                </div>
+                </div> -->
               </div>
               <p class="error-message" id="greetError"></p>
 
@@ -1100,8 +1102,9 @@
     <div id="snowfall-container"></div>
     <script type="module" src="asset/Javascript/main.js"></script>
     <script src="asset/Javascript/album.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="asset/Javascript/load-image.js"></script>
+
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script type="module" src="asset/Javascript/load-image.js"></script>
   </body>
 </html>
