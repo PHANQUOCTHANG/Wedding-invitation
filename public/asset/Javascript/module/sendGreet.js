@@ -59,7 +59,6 @@ export function sendGreet() {
     const db = getFirestore(app);
     // Form và danh sách lời chúc
     const wishForm = document.getElementById("greetForm");
-    const wishList = document.querySelector(".show-comment");
     // Gửi lời chúc
     const name = document.getElementById("nameInput").value.trim();
     const wish = document.getElementById("greetInput").value.trim();
@@ -75,15 +74,6 @@ export function sendGreet() {
         alert("Lời chúc đã được gửi thành công!");
         wishForm.reset();
         console.log("yeal");
-        let reference = wishList.querySelector(".wish:first-child");
-        let div = document.createElement("div");
-        div.classList.add("wish");
-        div.innerHTML = `
-            <p><strong>${name === "" ? "Bạn thân" : name}</strong>:</p>
-            <p>${wish.value}</p>
-          
-            `;
-        wishList.insertBefore(div, reference);
       } catch (error) {
         console.error("Lỗi khi gửi lời chúc:", error);
         alert("Có lỗi xảy ra khi gửi lời chúc!");
