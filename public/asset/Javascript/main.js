@@ -19,38 +19,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 // Firebase Configuration
 
-const firebaseConfig = {
-  apiKey: "AIzaSyC4J4vNDDyOzL71pIt3kt-pSqVVsgGyPKo",
-  authDomain: "iwedding-14b7b.firebaseapp.com",
-  projectId: "iwedding-14b7b",
-  storageBucket: "iwedding-14b7b.appspot.com",
-  messagingSenderId: "551497067888",
-  appId: "1:551497067888:web:684c654b7bd519f505f3b5",
-  measurementId: "G-L93WV3ZVSZ",
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// Form và danh sách lời chúc
-const wishList = document.querySelector(".show-comment");
-// Gửi lời chúc
-// Lấy và hiển thị lời chúc theo thời gian thực
-const wishesRef = collection(db, "wishes"); // Tham chiếu đến collection "wishes"
-const q = query(wishesRef, orderBy("timestamp", "desc")); // Truy vấn và sắp xếp theo timestamp
-
-onSnapshot(q, (snapshot) => {
-  wishList.innerHTML = "";
-  snapshot.forEach((doc) => {
-    const wishData = doc.data();
-    wishList.innerHTML += `
-      <div class="wish">
-          <p><strong>${wishData.name}</strong>:</p>
-          <p>${wishData.wish}</p>
-      </div>
-    `;
-  });
-});
-
 //xử lý khi mới vào trang
 const s0_title = document.querySelector(".section-1 .wrap .inner-title");
 const s0_img = document.querySelector(".section-1 .wrap .inner-img");
@@ -215,3 +183,31 @@ text_9_1.innerHTML = textWedding.text_9_1;
 // endend
 
 // end
+const firebaseConfig = {
+  apiKey: "AIzaSyC4J4vNDDyOzL71pIt3kt-pSqVVsgGyPKo",
+  authDomain: "iwedding-14b7b.firebaseapp.com",
+  projectId: "iwedding-14b7b",
+  storageBucket: "iwedding-14b7b.appspot.com",
+  messagingSenderId: "551497067888",
+  appId: "1:551497067888:web:684c654b7bd519f505f3b5",
+  measurementId: "G-L93WV3ZVSZ",
+};
+
+//Xử lý realtime sổ lưu bút
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const wishList = document.querySelector(".show-comment");
+const wishesRef = collection(db, "wishes"); // Tham chiếu đến collection "wishes"
+const q = query(wishesRef, orderBy("timestamp", "desc")); // Truy vấn và sắp xếp theo timestamp
+onSnapshot(q, (snapshot) => {
+  wishList.innerHTML = "";
+  snapshot.forEach((doc) => {
+    const wishData = doc.data();
+    wishList.innerHTML += `
+      <div class="wish">
+          <p><strong>${wishData.name}</strong></p>
+          <p>${wishData.wish}</p>
+      </div>
+    `;
+  });
+});

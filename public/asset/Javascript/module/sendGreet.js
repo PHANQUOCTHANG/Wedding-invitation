@@ -9,7 +9,6 @@ import {
   orderBy,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 export function sendGreet() {
-  //greet
   const firebaseConfig = {
     apiKey: "AIzaSyC4J4vNDDyOzL71pIt3kt-pSqVVsgGyPKo",
     authDomain: "iwedding-14b7b.firebaseapp.com",
@@ -20,6 +19,7 @@ export function sendGreet() {
     measurementId: "G-L93WV3ZVSZ",
   };
 
+  // hàm kiểm tra input
   function validateInput(input, errorElement, errorMessage) {
     if (!input.value.trim() || !input.checkValidity()) {
       errorElement.textContent = errorMessage;
@@ -35,7 +35,7 @@ export function sendGreet() {
       return 1;
     }
   }
-
+  // xử lý khi blur ra input
   document.getElementById("greetInput").addEventListener("blur", function () {
     validateInput(
       this,
@@ -47,10 +47,7 @@ export function sendGreet() {
   // Xử lý khi submit
   document.getElementById("greetForm").addEventListener("submit", async (e) => {
     e.preventDefault();
-    const nameInput = document.getElementById("nameInput");
     const greetInput = document.getElementById("greetInput");
-
-    const nameError = document.getElementById("nameError");
     const greetError = document.getElementById("greetError");
 
     validateInput(greetInput, greetError, "Lời chúc không được để trống!");
