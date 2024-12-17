@@ -28,7 +28,7 @@ export function buttonEvent() {
       openVolum.style.display = "block";
       closeVolum.style.display = "none";
       audio.play();
-      check = true;
+      // check = true;
     });
 
     openVolum.addEventListener("click", () => {
