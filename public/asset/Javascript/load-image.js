@@ -7,7 +7,7 @@ import {
   getDocs,
   onSnapshot,
   query,
-  orderBy
+  orderBy,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 
 // Cấu hình Firebase
@@ -30,10 +30,10 @@ async function loadImages() {
   const colImg = document.querySelectorAll(".col");
   const slideBlock = document.querySelector(".slide-block");
   const thumbNail = document.querySelector(".Thumbnail");
-  
+
   // Truy cập collection "album"
   const querySnapshot = await getDocs(collection(db, "album"));
-  
+
   let col1 = ``;
   let col2 = ``;
   let count = 1;
@@ -43,7 +43,7 @@ async function loadImages() {
   querySnapshot.forEach((doc) => {
     const data = doc.data();
 
-    // album-img . 
+    // album-img .
     let divAlbumImg = `<div class="img">
               <img
                 src=${data.url}
@@ -97,7 +97,7 @@ async function loadImages() {
 // Hàm chuyển đổi link YouTube thành dạng nhúng
 function convertToEmbedURL(youtubeURL) {
   const url = new URL(youtubeURL);
-  const videoId = url.searchParams.get("v"); 
+  const videoId = url.searchParams.get("v");
   if (videoId) {
     return `https://www.youtube.com/embed/${videoId}`;
   }
@@ -118,13 +118,14 @@ async function loadIntroduction() {
   const imageIntroUrl2 = document.getElementById("imageIntroUrl2");
   const brideUrl = document.getElementById("brideUrl");
   const groomUrl = document.getElementById("groomUrl");
-  const eventUrl1 = document.getElementById("eventUrl1") ;
-  const eventUrl2 = document.getElementById("eventUrl2") ;
-  const eventUrl3 = document.getElementById("eventUrl3") ;
-  const eventUrl4 = document.getElementById("eventUrl4") ;
-  const wMoneyIntro = document.querySelectorAll("#wMoneyIntro") ;
-  
-  const linkDefault = "https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/iwedding%2F2566.jpg?alt=media&token=570084b9-43f8-494a-8e5e-87638c1134ec" ;
+  const eventUrl1 = document.getElementById("eventUrl1");
+  const eventUrl2 = document.getElementById("eventUrl2");
+  const eventUrl3 = document.getElementById("eventUrl3");
+  const eventUrl4 = document.getElementById("eventUrl4");
+  const wMoneyIntro = document.querySelectorAll("#wMoneyIntro");
+
+  const linkDefault =
+    "https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/iwedding%2F2566.jpg?alt=media&token=570084b9-43f8-494a-8e5e-87638c1134ec";
 
   // Lắng nghe realtime document 'introduction'
   onSnapshot(doc(db, "content", "introduction"), (docSnapshot) => {
@@ -138,18 +139,19 @@ async function loadIntroduction() {
         "https://www.youtube.com/embed/defaultVideoID";
       VideoIntro.textContent = data.videoIntro || "Chưa có thông tin";
       eventIntro.textContent = data.eventIntro || "Chưa có thông tin";
-      busInfoIntro.innerHTML = data.busInfoIntro + ` ${address_a}` || "Chưa có thông tin";
+      busInfoIntro.innerHTML =
+        data.busInfoIntro + ` ${address_a}` || "Chưa có thông tin";
       guestBookIntro.textContent = data.guestBookIntro || "Chưa có thông tin";
       imageIntroUrl.src = data.imageIntroUrl || linkDefault;
       imageIntroUrl2.src = data.imageIntroUrl2 || linkDefault;
       brideUrl.src = data.brideUrl || linkDefault;
       groomUrl.src = data.groomUrl || linkDefault;
-      eventUrl1.src = data.eventUrl1 || linkDefault ;
-      eventUrl2.src = data.eventUrl2 || linkDefault ;
-      eventUrl3.src = data.eventUrl3 || linkDefault ;
-      eventUrl4.src = data.eventUrl4 || linkDefault ;
-      wMoneyIntro[0].textContent =  data.wMoneyIntro || "Chưa có thông tin" ;
-      wMoneyIntro[1].textContent =  data.wMoneyIntro || "Chưa có thông tin" ;
+      eventUrl1.src = data.eventUrl1 || linkDefault;
+      eventUrl2.src = data.eventUrl2 || linkDefault;
+      eventUrl3.src = data.eventUrl3 || linkDefault;
+      eventUrl4.src = data.eventUrl4 || linkDefault;
+      wMoneyIntro[0].textContent = data.wMoneyIntro || "Chưa có thông tin";
+      wMoneyIntro[1].textContent = data.wMoneyIntro || "Chưa có thông tin";
     } else {
       introDiv.textContent = "Chưa có dữ liệu!";
     }

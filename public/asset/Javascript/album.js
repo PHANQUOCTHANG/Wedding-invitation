@@ -20,8 +20,6 @@ const body = document.querySelector("body");
 const playIcon = document.querySelector(".play_icon");
 const pauseIcon = document.querySelector(".pause_icon");
 const pagecount = document.querySelector("#number-page");
-const WeddingGreet = document.querySelectorAll(".image-decs h4");
-const WeddingGreets = document.querySelectorAll(".image-decs");
 const turnOffThumbnail = document.querySelector(".turnOffThumbnail");
 const zoomOut = document.querySelector(".zoom-out");
 const zoomIn = document.querySelector(".zoom-in");
@@ -114,6 +112,7 @@ turnOffThumbnail.addEventListener("click", function () {
   }
 });
 function offThumbBtn() {
+  const WeddingGreets = document.querySelectorAll(".image-decs");
   WrapThumbnail.classList.add("flyFromBottom");
   WeddingGreets.forEach((Element) => {
     Element.classList.remove("clearBottom");
@@ -121,6 +120,7 @@ function offThumbBtn() {
   turnOffThumbnail.classList.remove("clearBottom");
 }
 function addAnimateForThumb(time) {
+  const WeddingGreets = document.querySelectorAll(".image-decs");
   setTimeout(() => {
     WrapThumbnail.classList.remove("flyFromBottom");
   }, time);
@@ -135,7 +135,6 @@ function addAnimateForThumb(time) {
 }
 var slideIndex = 1;
 var slides = document.getElementsByClassName("mySlides");
-showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
@@ -163,6 +162,7 @@ var zoomRadio = 1;
 
 zoomIn.addEventListener("click", function () {
   const curImage = slides[slideIndex - 1].querySelector(".thumb-img img");
+  console.log(curImage);
   if (zoomRadio < 2) {
     zoomRadio += 0.2;
     curImage.style.transform = `scale(${zoomRadio})`;
@@ -186,6 +186,8 @@ zoomOut.addEventListener("click", function () {
   }
 });
 function showSlides(n) {
+  const WeddingGreet = document.querySelectorAll(".image-decs h4");
+  const pagecount = document.querySelector("#number-page");
   zoomRadio = 1;
   [...slides].forEach((Element) => {
     let temp = Element.querySelector(".thumb-img img");
