@@ -9,21 +9,27 @@ export function buttonEvent() {
   const textVolum = document.querySelector(".text-volum");
   const buttonWeddings = document.querySelectorAll(".button-wedding");
 
+  // đặt sau 2 giây nút volum hiện lên .
   setTimeout(() => {
     closeVolum.style.display = "block";
   }, 2000);
 
+  // bắt sự kiện click của các nút .
   function ClickEven() {
+
+    // bắt sự kiện khi clickclick nút mục lục -> danh sách các nút hiện lên .
     buttonOpen.addEventListener("click", () => {
       buttonOpen.style.display = "none";
       listWedding.style.display = "block";
     });
 
+    // bắt sự kiện khi click nút đóng -> danh sách các nút đóng lại .
     buttonClose.addEventListener("click", () => {
       buttonOpen.style.display = "block";
       listWedding.style.display = "none";
     });
 
+    // bắt sự kiện khi click nút  closevolum 
     closeVolum.addEventListener("click", () => {
       openVolum.style.display = "block";
       closeVolum.style.display = "none";
@@ -31,6 +37,7 @@ export function buttonEvent() {
       check = true;
     });
 
+    // bắt sự kiện khi click nút  openvolum 
     openVolum.addEventListener("click", () => {
       openVolum.style.display = "none";
       closeVolum.style.display = "block";
@@ -38,6 +45,7 @@ export function buttonEvent() {
     });
   }
 
+  // đặt thời gian cho list các nút hiện ra .
   function timeShow() {
     setTimeout(() => {
       buttonOpen.style.display = "none";
@@ -45,6 +53,7 @@ export function buttonEvent() {
     }, 4000);
   }
 
+  // thời gian các text của từng nút hiện ra .
   function showText() {
     let delay = 16000;
     setInterval(() => {
@@ -65,6 +74,7 @@ export function buttonEvent() {
     }, delay);
   }
 
+  // thời gian của texttext nút volum hiện ra .
   function showTextAudio() {
     setTimeout(() => {
       textVolum.style.opacity = "1";
@@ -76,6 +86,7 @@ export function buttonEvent() {
     }, 10000);
   }
 
+  // gọi hàm .
   ClickEven();
   showTextAudio();
   timeShow();

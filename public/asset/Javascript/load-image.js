@@ -106,7 +106,7 @@ function convertToEmbedURL(youtubeURL) {
 
 const address_a = `<a href="..." target="_blank">TP.HCM</a> đến <a href="..." target="_blank">Cần Giờ</a>`;
 
-// Load lời ngỏ từ Firestore
+// Load text , link từ Firestore
 async function loadIntroduction() {
   const introDiv = document.getElementById("text-6-1");
   const linkYoutube = document.getElementById("link-youtube");
@@ -124,6 +124,7 @@ async function loadIntroduction() {
   const eventUrl4 = document.getElementById("eventUrl4") ;
   const wMoneyIntro = document.querySelectorAll("#wMoneyIntro") ;
   
+  // link mặc định .
   const linkDefault = "https://firebasestorage.googleapis.com/v0/b/ktech-75019.appspot.com/o/iwedding%2F2566.jpg?alt=media&token=570084b9-43f8-494a-8e5e-87638c1134ec" ;
 
   // Lắng nghe realtime document 'introduction'
@@ -144,9 +145,9 @@ async function loadIntroduction() {
       imageIntroUrl2.src = data.imageIntroUrl2 || linkDefault;
       brideUrl.src = data.brideUrl || linkDefault;
       groomUrl.src = data.groomUrl || linkDefault;
-      eventUrl1.src = data.eventUrl1 || linkDefault ;
+      // eventUrl1.src = data.eventUrl1 || linkDefault ;
       eventUrl2.src = data.eventUrl2 || linkDefault ;
-      eventUrl3.src = data.eventUrl3 || linkDefault ;
+      // eventUrl3.src = data.eventUrl3 || linkDefault ;
       eventUrl4.src = data.eventUrl4 || linkDefault ;
       wMoneyIntro[0].textContent =  data.wMoneyIntro || "Chưa có thông tin" ;
       wMoneyIntro[1].textContent =  data.wMoneyIntro || "Chưa có thông tin" ;
